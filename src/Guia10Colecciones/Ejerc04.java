@@ -12,7 +12,8 @@ public class Ejerc04 {
         peliculaService.crearPelicula(peliculas);
         peliculaService.mostrarTodasLasPeliculas(peliculas);
         peliculaService.mostrarPelicusMasUnaHora(peliculas);
-
+        peliculaService.ordenarPeliculasDesc(peliculas);
+        peliculaService.ordenarPeliculasAsce(peliculas);
 
 
 
