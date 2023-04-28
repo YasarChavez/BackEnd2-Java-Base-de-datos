@@ -19,7 +19,7 @@ public class AlumnoService {
         do {
             System.out.println("Ingrese el nombre del alumno");
             String nombre = scanner.next();
-            ArrayList<Integer> Notas = new ArrayList<>(3);
+            ArrayList<Integer> Notas = new ArrayList<>();
             System.out.println("Ingrese las notas del alumno");
             for (int i = 0; i < 3; i++) {
                 Notas.add(scanner.nextInt());
@@ -30,7 +30,7 @@ public class AlumnoService {
             respuesta = scanner.next();
         } while (respuesta.equalsIgnoreCase("s"));
 
-        mostrarAlumnos(alumnos);
+
     }
 
     public void mostrarAlumnos(ArrayList<Alumno> alumnos){

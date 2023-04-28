@@ -23,7 +23,7 @@ public class Ejerc03 {
         AlumnoService service = new AlumnoService();
         ArrayList<Alumno> alumnos = new ArrayList<>();
         service.crearAlumnos(alumnos);
-
+        service.mostrarAlumnos(alumnos);
 
     }
 }
