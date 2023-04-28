@@ -25,6 +25,10 @@ public class Ejerc03 {
         service.crearAlumnos(alumnos);
         service.mostrarAlumnos(alumnos);
         service.notaFinal(alumnos);
+        service.eliminarAlumno(alumnos);
+        service.mostrarAlumnos(alumnos);
+        service.modificarAlumno(alumnos);
+        service.mostrarAlumnos(alumnos);
 
     }
 }
