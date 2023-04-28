@@ -24,6 +24,7 @@ public class Ejerc06 {
         productos.put("pan", 2.0);
         int menu = 0;
         do {
+            System.out.println("Menu:");
             System.out.println("1. Agregar producto");
             System.out.println("2. Modificar producto");
             System.out.println("3. Eliminar producto");
