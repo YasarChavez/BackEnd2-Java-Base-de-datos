@@ -2,10 +2,11 @@ package Guia10Colecciones.Servicios;
 
 import Guia10Colecciones.Entidad.Pelicula;
 
-import java.util.ArrayList;
-import java.util.Collection;
+import java.util.*;
+import java.util.Arrays;
 import java.util.Collections;
-import java.util.Scanner;
+import java.util.Comparator;
+import java.util.stream.Collectors;
 
 /**
  * En el servicio deberemos tener un bucle que crea un objeto Pelicula pidiéndole al usuario
@@ -20,11 +21,11 @@ public class PeliculaService {
         boolean continuar = true;
         while (continuar){
             Pelicula pelicula = new Pelicula();
-            System.out.println("Ingrese el titulo de la pelicula");
+            System.out.println("Ingrese el titulo de la pelicula:");
             pelicula.setTitulo(leer.nextLine());
-            System.out.println("Ingrese el director de la pelicula");
+            System.out.println("Ingrese el director de la pelicula:");
             pelicula.setDirector(leer.nextLine());
-            System.out.println("Ingrese la duracion de la pelicula");
+            System.out.println("Ingrese la duracion de la pelicula:");
             pelicula.setDuracion(leer.nextFloat());
             leer.nextLine();
             peliculas.add(pelicula);
@@ -34,7 +35,7 @@ public class PeliculaService {
 
     }
     public void mostrarTodasLasPeliculas(ArrayList<Pelicula> peliculas){
-        System.out.println("Todas las Peliculas:");
+//        System.out.println("Todas las Peliculas:");
         for (Pelicula pelicula : peliculas) {
             System.out.println(pelicula);
         }
@@ -52,43 +53,57 @@ public class PeliculaService {
      *Ordenar las películas de acuerdo a su duración (de mayor a menor) y mostrarlo en
      * pantalla.
      */
-    public void ordenarPeliculasAsce(ArrayList<Pelicula> peliculas) {
-        System.out.println("Peliculas de mayor a menor duracion:");
-        for (int i = 0; i < peliculas.size(); i++) {
-            for (int j = 0; j < peliculas.size() - 1; j++) {
-                if (peliculas.get(j).getDuracion() < peliculas.get(j + 1).getDuracion()) {
-                    Pelicula aux = peliculas.get(j);
-                    peliculas.set(j, peliculas.get(j + 1));
-                    peliculas.set(j + 1, aux);
-                }
-            }
-        }
+    public void ordenarPeliculasDesc(ArrayList<Pelicula> peliculas) {
+        System.out.println("Peliculas de Mayor a Menor duracion:");
+//        for (int i = 0; i < peliculas.size(); i++) {
+//            for (int j = 0; j < peliculas.size() - 1; j++) {
+//                if (peliculas.get(j).getDuracion() < peliculas.get(j + 1).getDuracion()) {
+//                    Pelicula aux = peliculas.get(j);
+//                    peliculas.set(j, peliculas.get(j + 1));
+//                    peliculas.set(j + 1, aux);
+//                }
+//            }
+//        }
+        //Ordenar de mayor a menor duracion
+        /**
+         * From google... :/
+         * students.sort(Comparator.comparing(Student::getName)
+         *                  .reversed()
+         *                  .thenComparing(Student::getAge));
+         */
+        peliculas.sort(Comparator.comparing(Pelicula::getDuracion)
+                .reversed()
+                .thenComparing(Pelicula::getDuracion));
         mostrarTodasLasPeliculas(peliculas);
     }
     /**
      * Ordenar las películas de acuerdo a su duración (de menor a mayor) y mostrarlo en
      * pantalla.
      */
-    public void ordenarPeliculasDesc(ArrayList<Pelicula> peliculas) {
-        System.out.println("Peliculas de menor a mayor duracion:");
-        for (int i = 0; i < peliculas.size(); i++) {
-            for (int j = 0; j < peliculas.size() - 1; j++) {
-                if (peliculas.get(j).getDuracion() > peliculas.get(j + 1).getDuracion()) {
-                    Pelicula aux = peliculas.get(j);
-                    peliculas.set(j, peliculas.get(j + 1));
-                    peliculas.set(j + 1, aux);
-                }
-            }
-        }
+    public void ordenarPeliculasAsce(ArrayList<Pelicula> peliculas) {
+        System.out.println("Peliculas de Menor a Mayor duracion:");
+        peliculas.sort(Comparator.comparing(Pelicula::getDuracion)
+                .thenComparing(Pelicula::getDuracion));
         mostrarTodasLasPeliculas(peliculas);
     }
     /**
      * Ordenar las películas por título, alfabéticamente y mostrarlo en pantalla.
      */
     public void ordenarPeliculasTitulo(ArrayList<Pelicula> peliculas) {
-        System.out.println("Peliculas por titulo:");
-        //Ordenar por titulo
+        System.out.println("Peliculas por titulo de la A a la Z:");
+        /** From google... :/
+         * students.sort(Comparator.comparing(Student::getName)
+         *                 .thenComparing(Student::getAge));
+         */
+        peliculas.sort(Comparator.comparing(Pelicula::getTitulo)
+                        .thenComparing(Pelicula::getTitulo));
+        mostrarTodasLasPeliculas(peliculas);
     }
-
+    public void ordenarPeliculasDirector(ArrayList<Pelicula> peliculas) {
+        System.out.println("Peliculas por director de la A a la Z:");
+        peliculas.sort(Comparator.comparing(Pelicula::getDirector)
+                .thenComparing(Pelicula::getDirector));
+        mostrarTodasLasPeliculas(peliculas);
+    }
 
 }
