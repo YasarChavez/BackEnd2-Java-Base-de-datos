@@ -3,6 +3,8 @@ package Guia10Colecciones.Servicios;
 import Guia10Colecciones.Entidad.Pelicula;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Scanner;
 
 /**
@@ -80,7 +82,13 @@ public class PeliculaService {
         }
         mostrarTodasLasPeliculas(peliculas);
     }
-
+    /**
+     * Ordenar las películas por título, alfabéticamente y mostrarlo en pantalla.
+     */
+    public void ordenarPeliculasTitulo(ArrayList<Pelicula> peliculas) {
+        System.out.println("Peliculas por titulo:");
+        //Ordenar por titulo
+    }
 
 
 }
