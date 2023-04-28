@@ -12,8 +12,6 @@ public class Ejerc01y02 {
         RazaService service = new RazaService();
         ArrayList<String> razas = new ArrayList<>();
         service.crearRaza(razas);
-//        System.out.println("Eliminar con while:");
-//        service.eliminarRaza(razas);
         System.out.println("Eliminar con Iterator:");
         service.eliminarRazaIterator(razas);
     }

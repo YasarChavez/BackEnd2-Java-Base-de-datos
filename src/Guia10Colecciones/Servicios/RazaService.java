@@ -30,24 +30,6 @@ public class RazaService {
         }
     }
 
-    public void eliminarRaza(ArrayList<String> razas){
-        Scanner leer = new Scanner(System.in);
-        String raza;
-        boolean continuar = true;
-        while(continuar){
-            System.out.println("Ingrese una raza de perro a eliminar: ");
-            raza = leer.nextLine();
-            if(razas.contains(raza)){
-                razas.remove(raza);
-                System.out.println("Raza eliminada");
-            }else{
-                System.out.println("Raza no encontrada");
-            }
-            System.out.println("¿Desea eliminar otra raza de perro? (S/N)");
-            continuar = leer.nextLine().equalsIgnoreCase("s");
-        }
-        mostrarRazas(razas);
-    }
     //Eliminar raza con iterator
     public void eliminarRazaIterator(ArrayList<String> razas){
         Scanner leer = new Scanner(System.in);
