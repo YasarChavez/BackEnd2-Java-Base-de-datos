@@ -12,7 +12,7 @@ public class AlumnoService {
      * pregunta al usuario si quiere crear otro Alumno o no.
      */
 
-    public void crearAlumnos(ArrayList<Alumno> alumnos){
+    public void crearAlumnos(ArrayList<Alumno> alumnos) {
 
         Scanner scanner = new Scanner(System.in);
         String respuesta;
@@ -33,9 +33,26 @@ public class AlumnoService {
 
     }
 
-    public void mostrarAlumnos(ArrayList<Alumno> alumnos){
+    public void mostrarAlumnos(ArrayList<Alumno> alumnos) {
         for (Alumno alumno : alumnos) {
             System.out.println(alumno);
+        }
+    }
+
+    public void notaFinal(ArrayList<Alumno> alumnos) {
+        System.out.println("Ingrese el nombre del alumno a obtener promedio:");
+        Scanner scanner = new Scanner(System.in);
+        String nombre = scanner.next();
+        int promedio = 0;
+        for (Alumno alumno : alumnos) {
+            if (alumno.getNombre().equalsIgnoreCase(nombre)) {
+                for (int nota : alumno.getNotas()) {
+                    promedio += nota;
+                }
+                System.out.println("El promedio del alumno es: " + promedio / 3);
+            } else {
+                System.out.println("El alumno no existe");
+            }
         }
     }
 }

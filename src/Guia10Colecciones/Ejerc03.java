@@ -24,6 +24,7 @@ public class Ejerc03 {
         ArrayList<Alumno> alumnos = new ArrayList<>();
         service.crearAlumnos(alumnos);
         service.mostrarAlumnos(alumnos);
+        service.notaFinal(alumnos);
 
     }
 }
