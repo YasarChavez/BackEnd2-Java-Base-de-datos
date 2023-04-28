@@ -12,8 +12,8 @@ public class AlumnoService {
      * pregunta al usuario si quiere crear otro Alumno o no.
      */
 
-    public void crearAlumnos(){
-        ArrayList<Alumno> alumnos = new ArrayList<>();
+    public void crearAlumnos(ArrayList<Alumno> alumnos){
+
         Scanner scanner = new Scanner(System.in);
         String respuesta;
         do {

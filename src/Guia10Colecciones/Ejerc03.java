@@ -22,7 +22,7 @@ public class Ejerc03 {
     public static void main(String[] args) {
         AlumnoService service = new AlumnoService();
         ArrayList<Alumno> alumnos = new ArrayList<>();
-        service.crearAlumnos();
+        service.crearAlumnos(alumnos);
 
 
     }
