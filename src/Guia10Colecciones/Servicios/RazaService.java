@@ -11,13 +11,12 @@ import java.util.Iterator;
  */
 public class RazaService {
     public void crearRaza(ArrayList<String> razas){
-        Scanner leer = new Scanner(System.in);
-        String raza;
+        Scanner leer = new Scanner(System.in).useDelimiter("\n");
+
         boolean continuar = true;
         while(continuar){
             System.out.println("Ingrese una raza de perro: ");
-            raza = leer.nextLine();
-            razas.add(raza);
+            razas.add(leer.nextLine());
             System.out.println("¿Desea agregar otra raza de perro? (S/N)");
             continuar = leer.nextLine().equalsIgnoreCase("s");
         }

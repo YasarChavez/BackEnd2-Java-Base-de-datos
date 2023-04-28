@@ -52,6 +52,5 @@ public class Ejerc06 {
                     break;
             }
         }while (menu!= 5);
-
     }
 }
