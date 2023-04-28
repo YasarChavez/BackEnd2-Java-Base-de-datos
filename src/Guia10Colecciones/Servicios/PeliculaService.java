@@ -55,25 +55,14 @@ public class PeliculaService {
      */
     public void ordenarPeliculasDesc(ArrayList<Pelicula> peliculas) {
         System.out.println("Peliculas de Mayor a Menor duracion:");
-//        for (int i = 0; i < peliculas.size(); i++) {
-//            for (int j = 0; j < peliculas.size() - 1; j++) {
-//                if (peliculas.get(j).getDuracion() < peliculas.get(j + 1).getDuracion()) {
-//                    Pelicula aux = peliculas.get(j);
-//                    peliculas.set(j, peliculas.get(j + 1));
-//                    peliculas.set(j + 1, aux);
-//                }
-//            }
-//        }
-        //Ordenar de mayor a menor duracion
         /**
          * From google... :/
          * students.sort(Comparator.comparing(Student::getName)
          *                  .reversed()
          *                  .thenComparing(Student::getAge));
          */
-        peliculas.sort(Comparator.comparing(Pelicula::getDuracion)
-                .reversed()
-                .thenComparing(Pelicula::getDuracion));
+        //Ordenar de mayor a menor duracion
+        peliculas.sort(Comparator.comparing(Pelicula::getDuracion).reversed());
         mostrarTodasLasPeliculas(peliculas);
     }
     /**
@@ -82,8 +71,7 @@ public class PeliculaService {
      */
     public void ordenarPeliculasAsce(ArrayList<Pelicula> peliculas) {
         System.out.println("Peliculas de Menor a Mayor duracion:");
-        peliculas.sort(Comparator.comparing(Pelicula::getDuracion)
-                .thenComparing(Pelicula::getDuracion));
+        peliculas.sort(Comparator.comparing(Pelicula::getDuracion));
         mostrarTodasLasPeliculas(peliculas);
     }
     /**
@@ -95,14 +83,12 @@ public class PeliculaService {
          * students.sort(Comparator.comparing(Student::getName)
          *                 .thenComparing(Student::getAge));
          */
-        peliculas.sort(Comparator.comparing(Pelicula::getTitulo)
-                        .thenComparing(Pelicula::getTitulo));
+        peliculas.sort(Comparator.comparing(Pelicula::getTitulo));
         mostrarTodasLasPeliculas(peliculas);
     }
     public void ordenarPeliculasDirector(ArrayList<Pelicula> peliculas) {
         System.out.println("Peliculas por director de la A a la Z:");
-        peliculas.sort(Comparator.comparing(Pelicula::getDirector)
-                .thenComparing(Pelicula::getDirector));
+        peliculas.sort(Comparator.comparing(Pelicula::getDirector));
         mostrarTodasLasPeliculas(peliculas);
     }
 }
