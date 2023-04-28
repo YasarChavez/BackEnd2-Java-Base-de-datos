@@ -105,5 +105,4 @@ public class PeliculaService {
                 .thenComparing(Pelicula::getDirector));
         mostrarTodasLasPeliculas(peliculas);
     }
-
 }

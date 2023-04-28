@@ -26,6 +26,7 @@ public class Ejerc04 {
         peliculaService.ordenarPeliculasTitulo(peliculas);
         System.out.println(" ");
         peliculaService.ordenarPeliculasDirector(peliculas);
-
+        System.out.println(" ");
+        peliculaService.mostrarTodasLasPeliculas(peliculas);
     }
 }
