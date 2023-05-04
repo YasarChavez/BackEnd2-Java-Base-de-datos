@@ -23,9 +23,10 @@ public class PaisesService {
     public void mostrarPaises(HashSet<String> paises) {
         ArrayList<String> paisesList = new ArrayList<>(paises);
         System.out.println("Paises:");
-        paisesList.sort(Comparator.naturalOrder());
-        for (int i = 0; i < paisesList.size(); i++) {
-            System.out.println(paisesList.get(i));
+        Collections.sort(paisesList);
+//        paisesList.sort(Comparator.naturalOrder());
+        for (String paisesordenado: paisesList) {
+            System.out.println(paisesordenado);
         }
     }
     public void eliminarPaises(HashSet<String> paises){

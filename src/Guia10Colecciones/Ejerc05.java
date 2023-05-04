@@ -22,18 +22,18 @@ public class Ejerc05 {
     public static void main(String[] args) {
         PaisesService paisesService = new PaisesService();
         HashSet<String> paises = new HashSet<>();
-        paises.add("Chile");
-        paises.add("Argentina");
-        paises.add("Uruguay");
-        paises.add("Paraguay");
-        paises.add("Argentina");
-        paises.add("Brasil");
-        paises.add("Perónia");
-        paises.add("Bolivia");
-        paises.add("Colombia");
-        paises.add("Venezuela");
+//        paises.add("Chile");
+//        paises.add("Argentina");
+//        paises.add("Uruguay");
+//        paises.add("Paraguay");
+//        paises.add("Argentina");
+//        paises.add("Brasil");
+//        paises.add("Perónia");
+//        paises.add("Bolivia");
+//        paises.add("Colombia");
+//        paises.add("Venezuela");
 
-//        paisesService.agregarPaises(paises);
+        paisesService.agregarPaises(paises);
         paisesService.mostrarPaises(paises);
 //        System.out.println();
         paisesService.eliminarPaises(paises);
