@@ -4,6 +4,7 @@ import Guia10Colecciones.Entidad.Productos;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 /**
@@ -48,11 +49,14 @@ public class TiendaService {
         }
     }
     public void mostrarProductos(HashMap<String, Double> productos){
-        ArrayList<String> lista = new ArrayList<>(productos.keySet());
+//        ArrayList<String> lista = new ArrayList<>(productos.keySet());
         System.out.println("Lista de productos:");
-        for (int i = 0; i < lista.size(); i++) {
-            System.out.println(lista.get(i)+" "+productos.get(lista.get(i)));
+//        for (int i = 0; i < lista.size(); i++) {
+//            System.out.println(lista.get(i)+" "+productos.get(lista.get(i)));
+//        }
+//        System.out.println();
+        for (Map.Entry<String, Double> entry : productos.entrySet()) {
+            System.out.println(entry.getKey() + " " + entry.getValue());
         }
-        System.out.println();
     }
 }
