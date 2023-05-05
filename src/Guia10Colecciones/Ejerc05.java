@@ -2,8 +2,7 @@ package Guia10Colecciones;
 
 import Guia10Colecciones.Servicios.PaisesService;
 
-import java.util.*;
-import java.util.ArrayList;
+import java.util.HashSet;
 
 /**
  * Se requiere un programa que lea y guarde países, y para evitar que se ingresen repetidos
@@ -38,7 +37,6 @@ public class Ejerc05 {
 //        System.out.println();
         paisesService.eliminarPaises(paises);
         paisesService.mostrarPaises(paises);
-
 
 
     }

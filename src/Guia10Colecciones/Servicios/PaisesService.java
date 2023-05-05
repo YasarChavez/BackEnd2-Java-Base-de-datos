@@ -1,10 +1,9 @@
 package Guia10Colecciones.Servicios;
 
 import java.util.*;
-import java.util.Comparator;
 
 public class PaisesService {
-    public void agregarPaises(HashSet<String> paises){
+    public void agregarPaises(HashSet<String> paises) {
         Scanner leer = new Scanner(System.in);
         String pais;
         boolean bandera = true;
@@ -17,7 +16,7 @@ public class PaisesService {
             if (respuesta.equalsIgnoreCase("N")) {
                 bandera = false;
             }
-        }while (bandera);
+        } while (bandera);
     }
 
     public void mostrarPaises(HashSet<String> paises) {
@@ -25,26 +24,27 @@ public class PaisesService {
         System.out.println("Paises:");
         Collections.sort(paisesList);
 //        paisesList.sort(Comparator.naturalOrder());
-        for (String paisesordenado: paisesList) {
+        for (String paisesordenado : paisesList) {
             System.out.println(paisesordenado);
         }
     }
-    public void eliminarPaises(HashSet<String> paises){
+
+    public void eliminarPaises(HashSet<String> paises) {
         Iterator<String> it = paises.iterator();
         Scanner leer = new Scanner(System.in);
         System.out.println("Ingrese el pais a eliminar: ");
         String pais = leer.nextLine();
         boolean eliminada = false;
-        while (it.hasNext()){
+        while (it.hasNext()) {
             String aux = it.next();
-            if (aux.equalsIgnoreCase(pais)){
+            if (aux.equalsIgnoreCase(pais)) {
                 it.remove();
                 eliminada = true;
             }
         }
-        if (eliminada){
+        if (eliminada) {
             System.out.println("Pais eliminado");
-        }else {
+        } else {
             System.out.println("Pais no encontrado");
         }
     }

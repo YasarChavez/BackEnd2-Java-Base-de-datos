@@ -1,7 +1,9 @@
 package Guia10Colecciones.Servicios;
+
 import java.util.ArrayList;
-import java.util.Scanner;
 import java.util.Iterator;
+import java.util.Scanner;
+
 /**
  * Continuando el ejercicio anterior, después de mostrar los perros, al usuario se le pedirá
  * un perro y se recorrerá la lista con un Iterator, se buscará el perro en la lista. Si el perro
@@ -10,11 +12,11 @@ import java.util.Iterator;
  * la lista ordenada.
  */
 public class RazaService {
-    public void crearRaza(ArrayList<String> razas){
+    public void crearRaza(ArrayList<String> razas) {
         Scanner leer = new Scanner(System.in).useDelimiter("\n");
 
         boolean continuar = true;
-        while(continuar){
+        while (continuar) {
             System.out.println("Ingrese una raza de perro: ");
             razas.add(leer.nextLine());
             System.out.println("¿Desea agregar otra raza de perro? (S/N)");
@@ -23,30 +25,30 @@ public class RazaService {
         mostrarRazas(razas);
     }
 
-    public void mostrarRazas(ArrayList<String> razas){
+    public void mostrarRazas(ArrayList<String> razas) {
         System.out.println("Razas de perros: ");
-        for(String raza : razas){
+        for (String raza : razas) {
             System.out.println(raza);
         }
     }
 
     //Eliminar raza con iterator
-    public void eliminarRazaIterator(ArrayList<String> razas){
+    public void eliminarRazaIterator(ArrayList<String> razas) {
         Scanner leer = new Scanner(System.in);
         System.out.println("Ingrese una raza de perro a eliminar: ");
         String raza = leer.nextLine();
         Iterator<String> it = razas.iterator();
         boolean eliminada = false;
-        while (it.hasNext()){
+        while (it.hasNext()) {
             String aux = it.next();
-            if (aux.equalsIgnoreCase(raza)){
+            if (aux.equalsIgnoreCase(raza)) {
                 it.remove();
                 eliminada = true;
             }
         }
-        if (eliminada){
+        if (eliminada) {
             System.out.println("Raza eliminada");
-        }else {
+        } else {
             System.out.println("Raza no encontrada");
         }
         razas.sort(null);

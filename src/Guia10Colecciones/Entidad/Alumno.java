@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 /**
  * Su nombre y una lista de tipo Integer
- *  con sus 3 notas.
+ * con sus 3 notas.
  */
 public class Alumno {
     private String Nombre;

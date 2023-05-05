@@ -7,26 +7,26 @@ import java.util.ArrayList;
 
 public class Ejerc04 {
     public static void main(String[] args) {
-        PeliculaService peliculaService  = new PeliculaService();
-        ArrayList<Pelicula> peliculas = new ArrayList<>();
+        PeliculaService peliculaService = new PeliculaService();
+
 //        peliculas.add(new Pelicula("La verdad duele", "Ciencia ficción", 1));
 //        peliculas.add(new Pelicula("El señor de los anillos", "Fantasia", 2));
 //        peliculas.add(new Pelicula("El padrino", "Drama", 1));
 //        peliculas.add(new Pelicula("La vida es bella", "Comedia", 2));
-        peliculaService.crearPelicula(peliculas);
+        peliculaService.crearPelicula();
         System.out.println("Peliculas: ");
-        peliculaService.mostrarTodasLasPeliculas(peliculas);
+        peliculaService.mostrarTodasLasPeliculas();
         System.out.println(" ");
-        peliculaService.mostrarPelicusMasUnaHora(peliculas);
+        peliculaService.mostrarPelicusMasUnaHora();
         System.out.println(" ");
-        peliculaService.ordenarPeliculasDesc(peliculas);
+        peliculaService.ordenarPeliculasDesc();
         System.out.println(" ");
-        peliculaService.ordenarPeliculasAsce(peliculas);
+        peliculaService.ordenarPeliculasAsce();
         System.out.println(" ");
-        peliculaService.ordenarPeliculasTitulo(peliculas);
+        peliculaService.ordenarPeliculasTitulo();
         System.out.println(" ");
-        peliculaService.ordenarPeliculasDirector(peliculas);
+        peliculaService.ordenarPeliculasDirector();
         System.out.println(" ");
-        peliculaService.mostrarTodasLasPeliculas(peliculas);
+        peliculaService.mostrarTodasLasPeliculas();
     }
 }

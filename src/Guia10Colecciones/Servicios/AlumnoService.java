@@ -59,7 +59,7 @@ public class AlumnoService {
         }
     }
 
-    public void eliminarAlumno(ArrayList<Alumno> alumnos){
+    public void eliminarAlumno(ArrayList<Alumno> alumnos) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Ingrese el nombre del alumno a eliminar:");
         String nombre = scanner.next();
@@ -70,18 +70,20 @@ public class AlumnoService {
                 encontrado = true;
             }
         }
-        if (encontrado){
+        if (encontrado) {
             System.out.println("Alumno eliminado!");
-        }else {
+        } else {
             System.out.println("No existe el alumno!!!");
         }
     }
-    public void modificarAlumno(ArrayList<Alumno> alumnos){
+
+    public void modificarAlumno(ArrayList<Alumno> alumnos) {
         Scanner leer = new Scanner(System.in);
         System.out.println("Ingrese el nombre del alumno a modificar:");
         String nombre = leer.nextLine();
         for (int i = 0; i < alumnos.size(); i++) {
-            if (alumnos.get(i).getNombre().equalsIgnoreCase(nombre));{
+            if (alumnos.get(i).getNombre().equalsIgnoreCase(nombre)) ;
+            {
                 System.out.println("Nuevo nombre:");
                 String nuevoNombre = leer.nextLine();
                 alumnos.get(i).setNombre(nuevoNombre);

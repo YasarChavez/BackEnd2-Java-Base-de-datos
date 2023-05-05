@@ -17,7 +17,7 @@ import java.util.Scanner;
 public class Ejerc06 {
     public static void main(String[] args) {
         Scanner leer = new Scanner(System.in);
-        TiendaService  tiendaService = new TiendaService();
+        TiendaService tiendaService = new TiendaService();
         HashMap<String, Double> productos = new HashMap<>();
         productos.put("arroz", 10.0);
         productos.put("leche", 5.0);
@@ -29,7 +29,9 @@ public class Ejerc06 {
             System.out.println("2. Modificar producto");
             System.out.println("3. Eliminar producto");
             System.out.println("4. Mostrar productos");
-            System.out.println("5. Salir");
+            System.out.println("5. Promedio productos");
+            System.out.println("6. Salir");
+
             menu = leer.nextInt();
             switch (menu) {
                 case 1:
@@ -45,12 +47,15 @@ public class Ejerc06 {
                     tiendaService.mostrarProductos(productos);
                     break;
                 case 5:
+                    tiendaService.promedioProductos(productos);
+                    break;
+                case 6:
                     System.out.println("Saliendo...");
                     break;
                 default:
                     System.out.println("Opcion invalida");
                     break;
             }
-        }while (menu!= 5);
+        } while (menu != 5);
     }
 }
