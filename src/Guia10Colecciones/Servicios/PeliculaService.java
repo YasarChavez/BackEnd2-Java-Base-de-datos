@@ -3,6 +3,7 @@ package Guia10Colecciones.Servicios;
 import Guia10Colecciones.Entidad.Pelicula;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.Scanner;
 
@@ -14,6 +15,7 @@ import java.util.Scanner;
  */
 public class PeliculaService {
     ArrayList<Pelicula> peliculas = new ArrayList<>();
+
 
     public void crearPelicula() {
         Scanner leer = new Scanner(System.in).useDelimiter("\n");
@@ -31,7 +33,9 @@ public class PeliculaService {
             System.out.println("Desea agregar otra pelicula? S/N");
             continuar = leer.nextLine().equalsIgnoreCase("s");
         }
-
+        peliculas.add(new Pelicula("El Padrino", "Francis Ford Coppola", 2));
+        peliculas.add(new Pelicula("Titanic", "James Cameron", 3));
+        peliculas.add(new Pelicula("Avatar", "James Cameron", 1));
     }
 
     public void mostrarTodasLasPeliculas() {
@@ -63,7 +67,8 @@ public class PeliculaService {
          *                  .thenComparing(Student::getAge));
          */
         //Ordenar de mayor a menor duracion
-        peliculas.sort(Comparator.comparing(Pelicula::getDuracion).reversed());
+        Comparator<Pelicula> comp = Comparator.comparing(Pelicula::getDuracion);
+        Collections.sort(peliculas, comp.reversed());
         mostrarTodasLasPeliculas();
     }
 
@@ -73,7 +78,8 @@ public class PeliculaService {
      */
     public void ordenarPeliculasAsce() {
         System.out.println("Peliculas de Menor a Mayor duracion:");
-        peliculas.sort(Comparator.comparing(Pelicula::getDuracion));
+        Comparator<Pelicula> comp = Comparator.comparing(Pelicula::getDuracion);
+        Collections.sort(peliculas, comp);
         mostrarTodasLasPeliculas();
     }
 
@@ -86,13 +92,15 @@ public class PeliculaService {
          * students.sort(Comparator.comparing(Student::getName)
          *                 .thenComparing(Student::getAge));
          */
-        peliculas.sort(Comparator.comparing(Pelicula::getTitulo));
+        Comparator<Pelicula> comp = Comparator.comparing(Pelicula::getDuracion);
+        Collections.sort(peliculas, comp);
         mostrarTodasLasPeliculas();
     }
 
     public void ordenarPeliculasDirector() {
         System.out.println("Peliculas por director de la A a la Z:");
-        peliculas.sort(Comparator.comparing(Pelicula::getDirector));
+        Comparator<Pelicula> comp = Comparator.comparing(Pelicula::getDirector);
+        Collections.sort(peliculas, comp);
         mostrarTodasLasPeliculas();
     }
 }
