@@ -90,4 +90,19 @@ public class AlumnoService {
             }
         }
     }
+    public void modificarNotaExistente(ArrayList<Alumno> alumnos) {
+        Scanner leer = new Scanner(System.in);
+        System.out.println("Ingrese el nombre del alumno a modificar:");
+        String nombre = leer.nextLine();
+        for (int i = 0; i < alumnos.size(); i++) {
+            if (alumnos.get(i).getNombre().equalsIgnoreCase(nombre)) ;
+            {
+                System.out.println("Ingrese la posicion de la nota a modificar");
+                int posicion = leer.nextInt();
+                System.out.println("Ingrese la nueva nota:");
+                int nota = leer.nextInt();
+                alumnos.get(i).getNotas().set(posicion, nota);
+            }
+        }
+    }
 }
