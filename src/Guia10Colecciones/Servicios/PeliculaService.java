@@ -92,7 +92,7 @@ public class PeliculaService {
          * students.sort(Comparator.comparing(Student::getName)
          *                 .thenComparing(Student::getAge));
          */
-        Comparator<Pelicula> comp = Comparator.comparing(Pelicula::getDuracion);
+        Comparator<Pelicula> comp = Comparator.comparing(Pelicula::getTitulo);
         Collections.sort(peliculas, comp);
         mostrarTodasLasPeliculas();
     }
