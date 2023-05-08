@@ -60,7 +60,7 @@ public class LibreriaService {
         Iterator<Libro> it = libroHashSet.iterator();
         while (it.hasNext()){
             Libro libro = it.next();
-            if (libro.getTitulo().equalsIgnoreCase(titulo) && libro.getGetNumeroDeEjemplaresPrestados()>0){
+            if (libro.getTitulo().equals(titulo) && libro.getGetNumeroDeEjemplaresPrestados()>0){
                 libro.setGetNumeroDeEjemplaresPrestados(libro.getGetNumeroDeEjemplaresPrestados()-1);
                 devuelto = true;
             }
