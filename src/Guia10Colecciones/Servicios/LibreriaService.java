@@ -18,6 +18,7 @@ import java.util.Scanner;
 public class LibreriaService {
     Scanner leer = new Scanner(System.in);
 
+
     public void prestamo(HashSet<Libro> libroHashSet){
         System.out.println("Ingrese el titulo del libro que quiere pedir prestado:");
         String titulo = leer.nextLine();

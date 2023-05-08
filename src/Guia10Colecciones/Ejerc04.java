@@ -3,6 +3,7 @@ package Guia10Colecciones;
 import Guia10Colecciones.Entidad.Pelicula;
 import Guia10Colecciones.Servicios.PeliculaService;
 
+import java.sql.ClientInfoStatus;
 import java.util.ArrayList;
 
 public class Ejerc04 {
@@ -23,5 +24,6 @@ public class Ejerc04 {
         peliculaService.ordenarPeliculasDirector();
         System.out.println(" ");
         peliculaService.mostrarTodasLasPeliculas();
+
     }
 }

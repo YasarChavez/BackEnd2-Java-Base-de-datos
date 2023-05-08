@@ -18,6 +18,7 @@ public class Ejerc03 {
         Scanner leer = new Scanner(System.in).useDelimiter("\n");
         LibreriaService libreriaService = new LibreriaService();
         HashSet<Libro> libroHashSet = new HashSet<>();
+
         libroHashSet.add(new Libro("El señor de los anillos", "J.R.R. Tolkien", 5, 2));
         libroHashSet.add(new Libro("El Quijote", "Miguel de Cervantes", 3, 3));
         libroHashSet.add(new Libro("Harry Potter", "J.K. Rowling", 4, 1));
