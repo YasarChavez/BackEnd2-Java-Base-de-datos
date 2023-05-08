@@ -3,6 +3,7 @@ package Guia10Colecciones.Servicios;
 import Guia10Colecciones.Entidad.Libro;
 
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Scanner;
 
 /**
@@ -21,7 +22,9 @@ public class LibreriaService {
         System.out.println("Ingrese el titulo del libro que quiere pedir prestado:");
         String titulo = leer.nextLine();
         boolean prestado = false;
-        for (Libro libro:libroHashSet) {
+        Iterator<Libro> it = libroHashSet.iterator();
+        while (it.hasNext()){
+            Libro libro = it.next();
             if (libro.getTitulo().equals(titulo) && libro.getNumeroDeEjemplares()>0 && libro.getGetNumeroDeEjemplaresPrestados()<libro.getNumeroDeEjemplares()){
                 libro.setGetNumeroDeEjemplaresPrestados(libro.getGetNumeroDeEjemplaresPrestados() + 1);
                 prestado = true;
@@ -54,11 +57,12 @@ public class LibreriaService {
         System.out.println("Ingrese el titulo del libro que va a devolver:");
         String titulo = leer.nextLine();
         boolean devuelto = false;
-        for(Libro libro : libroHashSet){
+        Iterator<Libro> it = libroHashSet.iterator();
+        while (it.hasNext()){
+            Libro libro = it.next();
             if (libro.getTitulo().equalsIgnoreCase(titulo) && libro.getGetNumeroDeEjemplaresPrestados()>0){
                 libro.setGetNumeroDeEjemplaresPrestados(libro.getGetNumeroDeEjemplaresPrestados()-1);
                 devuelto = true;
-
             }
         }
         if (devuelto){
