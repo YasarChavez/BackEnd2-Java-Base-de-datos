@@ -26,8 +26,8 @@ public class LibreriaService {
         Iterator<Libro> it = libroHashSet.iterator();
         while (it.hasNext()) {
             Libro libro = it.next();
-            if (libro.getTitulo().equals(titulo) && libro.getNumeroDeEjemplares() > 0 && libro.getGetNumeroDeEjemplaresPrestados() < libro.getNumeroDeEjemplares()) {
-                libro.setGetNumeroDeEjemplaresPrestados(libro.getGetNumeroDeEjemplaresPrestados() + 1);
+            if (libro.getTitulo().equals(titulo) && libro.getNumeroDeEjemplares() > 0 && libro.getNumeroDeEjemplaresPrestados() < libro.getNumeroDeEjemplares()) {
+                libro.setNumeroDeEjemplaresPrestados(libro.getNumeroDeEjemplaresPrestados() + 1);
                 prestado = true;
             }
         }
@@ -38,8 +38,8 @@ public class LibreriaService {
             for (Libro libro : libroHashSet) {
                 if (libro.getTitulo().equals(titulo)) {
                     System.out.println("Cantidad de ejemplares existentes: " + libro.getNumeroDeEjemplares());
-                    System.out.println("Cantidad de ejemplares prestados: " + libro.getGetNumeroDeEjemplaresPrestados());
-                    System.out.println("Cantidad actual disponible para prestar: " + (libro.getNumeroDeEjemplares() - libro.getGetNumeroDeEjemplaresPrestados()));
+                    System.out.println("Cantidad de ejemplares prestados: " + libro.getNumeroDeEjemplaresPrestados());
+                    System.out.println("Cantidad actual disponible para prestar: " + (libro.getNumeroDeEjemplares() - libro.getNumeroDeEjemplaresPrestados()));
                 }
             }
         }
@@ -62,8 +62,8 @@ public class LibreriaService {
         Iterator<Libro> it = libroHashSet.iterator();
         while (it.hasNext()) {
             Libro libro = it.next();
-            if (libro.getTitulo().equals(titulo) && libro.getGetNumeroDeEjemplaresPrestados() > 0) {
-                libro.setGetNumeroDeEjemplaresPrestados(libro.getGetNumeroDeEjemplaresPrestados() - 1);
+            if (libro.getTitulo().equals(titulo) && libro.getNumeroDeEjemplaresPrestados() > 0) {
+                libro.setNumeroDeEjemplaresPrestados(libro.getNumeroDeEjemplaresPrestados() - 1);
                 devuelto = true;
             }
         }
@@ -77,7 +77,7 @@ public class LibreriaService {
     public void mostrarlibros(HashSet<Libro> libroHashSet) {
         for (Libro libro : libroHashSet) {
             System.out.println("Titulo: " + libro.getTitulo() + " / Autor: " + libro.getAutor());
-            int disponibles = libro.getNumeroDeEjemplares() - libro.getGetNumeroDeEjemplaresPrestados();
+            int disponibles = libro.getNumeroDeEjemplares() - libro.getNumeroDeEjemplaresPrestados();
             System.out.println("Disponibles para prestar :" + disponibles);
         }
     }

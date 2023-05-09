@@ -15,7 +15,7 @@ public class Libro {
     private String titulo;
     private String autor;
     private int numeroDeEjemplares;
-    private int getNumeroDeEjemplaresPrestados;
+    private int NumeroDeEjemplaresPrestados;
 
     public Libro() {
     }
@@ -24,7 +24,7 @@ public class Libro {
         this.titulo = titulo;
         this.autor = autor;
         this.numeroDeEjemplares = numeroDeEjemplares;
-        this.getNumeroDeEjemplaresPrestados = getNumeroDeEjemplaresPrestados;
+        this.NumeroDeEjemplaresPrestados = getNumeroDeEjemplaresPrestados;
     }
 
     public String getTitulo() {
@@ -51,12 +51,12 @@ public class Libro {
         this.numeroDeEjemplares = numeroDeEjemplares;
     }
 
-    public int getGetNumeroDeEjemplaresPrestados() {
-        return getNumeroDeEjemplaresPrestados;
+    public int getNumeroDeEjemplaresPrestados() {
+        return NumeroDeEjemplaresPrestados;
     }
 
-    public void setGetNumeroDeEjemplaresPrestados(int getNumeroDeEjemplaresPrestados) {
-        this.getNumeroDeEjemplaresPrestados = getNumeroDeEjemplaresPrestados;
+    public void setNumeroDeEjemplaresPrestados(int numeroDeEjemplaresPrestados) {
+        NumeroDeEjemplaresPrestados = numeroDeEjemplaresPrestados;
     }
 
     @Override
@@ -65,7 +65,7 @@ public class Libro {
                 "titulo='" + titulo + '\'' +
                 ", autor='" + autor + '\'' +
                 ", numeroDeEjemplares=" + numeroDeEjemplares +
-                ", getNumeroDeEjemplaresPrestados=" + getNumeroDeEjemplaresPrestados +
+                ", getNumeroDeEjemplaresPrestados=" + NumeroDeEjemplaresPrestados +
                 '}';
     }
 }
