@@ -1,4 +1,5 @@
 package Guia10Colecciones.Entidad;
+
 /**
  * Implemente un programa para una Librería haciendo uso de un HashSet para evitar
  * datos repetidos. Para ello, se debe crear una clase llamada Libro que guarde la

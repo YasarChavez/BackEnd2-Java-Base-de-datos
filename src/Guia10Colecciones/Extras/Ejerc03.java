@@ -31,10 +31,10 @@ public class Ejerc03 {
             System.out.println("4. Mostrar libros");
             System.out.println("5. Salir");
             menu = leer.nextInt();
-            switch (menu){
+            switch (menu) {
                 case 1:
                     boolean crearOtroLibro = true;
-                    while (crearOtroLibro){
+                    while (crearOtroLibro) {
                         Libro libro = new Libro();
                         System.out.println("Ingrese el titulo:");
                         libro.setTitulo(leer.nextLine());
@@ -68,10 +68,7 @@ public class Ejerc03 {
                     System.out.println("Opcion no valida");
             }
 
-        }while (menu!=5);
-
-
-
+        } while (menu != 5);
 
 
     }

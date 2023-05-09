@@ -15,6 +15,7 @@ import java.util.Scanner;
  */
 public class PeliculaService {
     ArrayList<Pelicula> peliculas = new ArrayList<>();
+
     public void crearPelicula() {
         Scanner leer = new Scanner(System.in).useDelimiter("\n");
         boolean continuar = true;

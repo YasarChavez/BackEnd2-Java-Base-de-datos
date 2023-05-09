@@ -1,7 +1,6 @@
 package Guia10Colecciones.Servicios;
 
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -64,18 +63,18 @@ public class PostalesService {
         }
     }
 
-    public void eliminarCodigos(HashMap<Integer, String> codPostales){
-        for (int i = 0;i<3;i++){
+    public void eliminarCodigos(HashMap<Integer, String> codPostales) {
+        for (int i = 0; i < 3; i++) {
             System.out.println("Ingrese un codigo postal a elimar:");
             int cod = leer.nextInt();
             boolean encontrada = false;
-            if (codPostales.containsKey(cod)){
+            if (codPostales.containsKey(cod)) {
                 codPostales.remove(cod);
                 encontrada = true;
             }
-            if (encontrada){
+            if (encontrada) {
                 System.out.println("Se elimino la ciudad.");
-            }else {
+            } else {
                 System.out.println("Ciudad no encontrada.");
             }
 

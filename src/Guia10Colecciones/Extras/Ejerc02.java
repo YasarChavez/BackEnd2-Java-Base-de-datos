@@ -20,7 +20,7 @@ import java.util.Scanner;
 public class Ejerc02 {
     public static void main(String[] args) {
         Scanner leer = new Scanner(System.in);
-        CantanteFamosoService  service = new CantanteFamosoService();
+        CantanteFamosoService service = new CantanteFamosoService();
         ArrayList<CantanteFamoso> lista = new ArrayList<>();
         lista.add(new CantanteFamoso("Tu piel", "Pure Negga"));
         lista.add(new CantanteFamoso("Lady Gaga", "Bad Romance"));
@@ -51,7 +51,7 @@ public class Ejerc02 {
                     System.out.println("Opcion invalida");
                     break;
             }
-        }while (menu != 4);
+        } while (menu != 4);
         System.out.println();
         System.out.println("Lista Final");
         service.mostrarCantantes(lista);

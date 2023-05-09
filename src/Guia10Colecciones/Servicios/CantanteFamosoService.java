@@ -8,9 +8,9 @@ import java.util.Scanner;
 public class CantanteFamosoService {
     Scanner leer = new Scanner(System.in);
 
-    public void agregarCantanteFamoso(ArrayList<CantanteFamoso> lista){
-        String  respuesta;
-        do{
+    public void agregarCantanteFamoso(ArrayList<CantanteFamoso> lista) {
+        String respuesta;
+        do {
             CantanteFamoso cantante = new CantanteFamoso();
             System.out.println("Ingrese el nombre del cantante:");
             cantante.setNombre(leer.nextLine());
@@ -18,8 +18,8 @@ public class CantanteFamosoService {
             cantante.setDiscoConMasVentas(leer.nextLine());
             lista.add(cantante);
             System.out.println("Desea agregar otro cantante? s/n");
-            respuesta=leer.next();
-        }while (respuesta.equalsIgnoreCase("s"));
+            respuesta = leer.next();
+        } while (respuesta.equalsIgnoreCase("s"));
 
     }
 

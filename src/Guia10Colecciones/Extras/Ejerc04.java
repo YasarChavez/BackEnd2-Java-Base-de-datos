@@ -21,15 +21,15 @@ import java.util.Scanner;
 public class Ejerc04 {
     public static void main(String[] args) {
         Scanner leer = new Scanner(System.in);
-        HashMap<Integer,String> codPostales = new HashMap<>();
+        HashMap<Integer, String> codPostales = new HashMap<>();
         PostalesService postalesService = new PostalesService();
-        codPostales.put(3000,"Sant Fe");
-        codPostales.put(1655,"Jose Leon Suarez");
-        codPostales.put(1836,"Lomas de Zamora");
-        codPostales.put(2520,"Las Rosas");
-        codPostales.put(1822,"Lanus");
-        codPostales.put(2000,"Rosario");
-        codPostales.put(1876,"Quilmes");
+        codPostales.put(3000, "Sant Fe");
+        codPostales.put(1655, "Jose Leon Suarez");
+        codPostales.put(1836, "Lomas de Zamora");
+        codPostales.put(2520, "Las Rosas");
+        codPostales.put(1822, "Lanus");
+        codPostales.put(2000, "Rosario");
+        codPostales.put(1876, "Quilmes");
 
         int menu = 0;
         do {
@@ -64,7 +64,7 @@ public class Ejerc04 {
                     System.out.println("Opcion no valida");
                     break;
             }
-        }while (menu != 6);
+        } while (menu != 6);
 
     }
 }
