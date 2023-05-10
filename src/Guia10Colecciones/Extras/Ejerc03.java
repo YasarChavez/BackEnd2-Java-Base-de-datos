@@ -43,7 +43,7 @@ public class Ejerc03 {
                         System.out.println("Ingrese el numero de ejemplares:");
                         libro.setNumeroDeEjemplares(leer.nextInt());
                         System.out.println("Ingrese el numero de ejemplares prestados:");
-                        libro.setGetNumeroDeEjemplaresPrestados(leer.nextInt());
+                        libro.setNumeroDeEjemplaresPrestados(leer.nextInt());
                         leer.nextLine();
                         libroHashSet.add(libro);
                         System.out.println("¿Desea crear otro libro? (s/n)");

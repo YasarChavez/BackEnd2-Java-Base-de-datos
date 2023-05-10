@@ -26,7 +26,8 @@ public class LibreriaService {
         Iterator<Libro> it = libroHashSet.iterator();
         while (it.hasNext()) {
             Libro libro = it.next();
-            if (libro.getTitulo().equals(titulo) && libro.getNumeroDeEjemplares() > 0 && libro.getNumeroDeEjemplaresPrestados() < libro.getNumeroDeEjemplares()) {
+            if (libro.getTitulo().equals(titulo) && libro.getNumeroDeEjemplares() > 0
+                    && libro.getNumeroDeEjemplaresPrestados() < libro.getNumeroDeEjemplares()) {
                 libro.setNumeroDeEjemplaresPrestados(libro.getNumeroDeEjemplaresPrestados() + 1);
                 prestado = true;
             }
@@ -39,11 +40,11 @@ public class LibreriaService {
                 if (libro.getTitulo().equals(titulo)) {
                     System.out.println("Cantidad de ejemplares existentes: " + libro.getNumeroDeEjemplares());
                     System.out.println("Cantidad de ejemplares prestados: " + libro.getNumeroDeEjemplaresPrestados());
-                    System.out.println("Cantidad actual disponible para prestar: " + (libro.getNumeroDeEjemplares() - libro.getNumeroDeEjemplaresPrestados()));
+                    System.out.println("Cantidad actual disponible para prestar: " + (libro.getNumeroDeEjemplares() -
+                            libro.getNumeroDeEjemplaresPrestados()));
                 }
             }
         }
-
     }
 
     /* • Método devolucion(): El usuario ingresa el titulo del libro que quiere devolver y se
