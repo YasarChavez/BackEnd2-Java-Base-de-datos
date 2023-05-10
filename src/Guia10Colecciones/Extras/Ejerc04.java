@@ -23,7 +23,7 @@ public class Ejerc04 {
         Scanner leer = new Scanner(System.in);
         HashMap<Integer, String> codPostales = new HashMap<>();
         PostalesService postalesService = new PostalesService();
-        codPostales.put(3000, "Sant Fe");
+        codPostales.put(3000, "Santa Fe");
         codPostales.put(1655, "Jose Leon Suarez");
         codPostales.put(1836, "Lomas de Zamora");
         codPostales.put(2520, "Las Rosas");

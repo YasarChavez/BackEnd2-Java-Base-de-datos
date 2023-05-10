@@ -52,14 +52,14 @@ public class PostalesService {
 
     }
 
+
     public void buscarCodigo(HashMap<Integer, String> codPostales) {
         System.out.println("Ingrese un codigo postal:");
         int codi = leer.nextInt();
-        String ciudad = codPostales.get(codi);
-        if (ciudad != null) {
-            System.out.println("La ciudad es: " + ciudad);
-        } else {
-            System.out.println("No se encontró la ciudad.");
+        if (codPostales.containsKey(codi)) {
+            System.out.println("La ciudad es: " + codPostales.get(codi));
+        }else {
+            System.out.println("Codigo no encontrado.");
         }
     }
 
