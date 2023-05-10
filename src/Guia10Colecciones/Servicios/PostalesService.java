@@ -58,7 +58,7 @@ public class PostalesService {
         int codi = leer.nextInt();
         if (codPostales.containsKey(codi)) {
             System.out.println("La ciudad es: " + codPostales.get(codi));
-        }else {
+        } else {
             System.out.println("Codigo no encontrado.");
         }
     }
@@ -67,12 +67,8 @@ public class PostalesService {
         for (int i = 0; i < 3; i++) {
             System.out.println("Ingrese un codigo postal a elimar:");
             int cod = leer.nextInt();
-            boolean encontrada = false;
             if (codPostales.containsKey(cod)) {
                 codPostales.remove(cod);
-                encontrada = true;
-            }
-            if (encontrada) {
                 System.out.println("Se elimino la ciudad.");
             } else {
                 System.out.println("Ciudad no encontrada.");
