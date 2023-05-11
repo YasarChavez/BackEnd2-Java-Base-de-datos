@@ -24,9 +24,6 @@ public class Ejerc05 {
         recetas.add(receta2);
         Receta receta3 = new Receta("Receta3", "Piña", "Aceite", "Sal");
         recetas.add(receta3);
-        recetaService.crearReceta(recetas);
-        recetaService.buscarReceta(recetas);
-        recetaService.obtenerRecetasDisponiblesConIngredientes(recetas);
         int menu = 0;
         do {
             System.out.println("1. Agregar receta");
