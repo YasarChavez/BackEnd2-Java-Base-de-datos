@@ -43,7 +43,6 @@ public class RecetaService {
         String ingrediente2 = leer.next();
         String ingrediente3 = leer.next();
         System.out.println("Las recetas disponibles con los ingredientes de la cocina son:");
-
         for (Receta receta : recetas) {
         //verificar si la receta tiene todos los ingredientes
                 if (receta.getIngrediente1().equals(ingrediente1) && receta.getIngrediente2().equals(ingrediente2) && receta.getIngrediente3().equals(ingrediente3)) {
