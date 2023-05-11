@@ -28,7 +28,7 @@ public class Ejerc05 {
         do {
             System.out.println("1. Agregar receta");
             System.out.println("2. Buscar receta");
-            System.out.println("3. Obtener recetas disponibles con ingredientes");
+            System.out.println("3. Obtener recetas disponibles con los ingredientes que hay en la cocina");
             System.out.println("4. Salir");
             menu = leer.nextInt();
             switch (menu) {
