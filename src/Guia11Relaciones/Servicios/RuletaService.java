@@ -46,7 +46,6 @@ public class RuletaService {
             jugador.setMojado(true);
             seMurio=true;
         }
-        siguienteChorro(revolverObj);
         return seMurio;
     }
     public boolean ronda(Jugador jugador){
@@ -66,8 +65,8 @@ public class RuletaService {
     public void siguienteChorro(Revolver revolverObj){
         if (revolverObj.getPosActual()<6){
             revolverObj.setPosActual(revolverObj.getPosActual()+1);
-        }else{
-            revolverObj.setPosActual(0);
+        }else if (revolverObj.getPosActual()==6){
+            revolverObj.setPosActual(1);
         }
     }
 

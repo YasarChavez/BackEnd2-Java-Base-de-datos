@@ -38,10 +38,9 @@ public class Revolver {
 
     @Override
     public String toString() {
-        return "Revolver{" +
+        return "Revolver: " +
                 "posActual=" + posActual +
-                ", posAgua=" + posAgua +
-                '}';
+                ", posAgua=" + posAgua;
     }
 
 }

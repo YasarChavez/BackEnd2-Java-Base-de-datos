@@ -6,6 +6,7 @@ import Guia11Relaciones.Entidades.Revolver;
 import Guia11Relaciones.Servicios.RuletaService;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  * Realizar el juego de la ruleta rusa de agua en Java. Como muchos saben, el juego se trata de
@@ -17,19 +18,30 @@ import java.util.ArrayList;
  */
 public class Ejerc02 {
     public static void main(String[] args) {
-        //TODO
+        Scanner leer = new Scanner(System.in).useDelimiter("\n");
         RuletaService ruletaService = new RuletaService();
         ArrayList<Jugador> jugadores = new ArrayList<>();
         Revolver revolver = new Revolver();
         ruletaService.llenarRevolver(revolver);
-        System.out.println("Posicion revolver: " + revolver.getPosActual()+"\nPosicion agua: "+revolver.getPosAgua());
-        ruletaService.llenarJuego(jugadores,revolver);
-        for (Jugador jugadores1 : jugadores) {
-            System.out.println(jugadores1);
+        System.out.println();
+        System.out.println("Posicion revolver: " + revolver.getPosActual() + "\nPosicion agua: " + revolver.getPosAgua());
+        ruletaService.llenarJuego(jugadores, revolver);
+        System.out.println();
+        System.out.println("Disparando: ");
+        for (int i = 0; i < jugadores.size(); i++) {
+            boolean muerto = false;
+            System.out.println(jugadores.get(i).getNombre() + " Se dispara!  //"+revolver.toString());
+            if (ruletaService.disparo(jugadores.get(i), revolver)){
+                System.out.println("El " + jugadores.get(i).getNombre() + " Murio :/");
+                muerto = true;
+            }else {
+                System.out.println("Sigue vivo!");
+                System.out.println();
+                ruletaService.siguienteChorro(revolver);
+            }
+            if (muerto){
+               break;
+            }
         }
-
-
-
-
     }
 }
