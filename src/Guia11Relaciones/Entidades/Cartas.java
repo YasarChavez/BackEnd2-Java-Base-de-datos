@@ -2,12 +2,12 @@ package Guia11Relaciones.Entidades;
 
 public class Cartas {
     private String numero;
-    private String palo;
+    private Palos palo;
 
     public Cartas() {
     }
 
-    public Cartas(String numero, String palo) {
+    public Cartas(String numero, Palos palo) {
         this.numero = numero;
         this.palo = palo;
     }
@@ -20,11 +20,11 @@ public class Cartas {
         this.numero = numero;
     }
 
-    public String getPalo() {
+    public Palos getPalo() {
         return palo;
     }
 
-    public void setPalo(String palo) {
+    public void setPalo(Palos palo) {
         this.palo = palo;
     }
 

@@ -1,6 +1,7 @@
 package Guia11Relaciones.Servicios;
 
 import Guia11Relaciones.Entidades.Cartas;
+import Guia11Relaciones.Entidades.Palos;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -8,25 +9,29 @@ import java.util.Scanner;
 
 public class BarajaService {
     Scanner leer = new Scanner(System.in);
+    ArrayList<Palos> palos = new ArrayList<>();;
     ArrayList<Cartas> cartas = new ArrayList<>();
     ArrayList<Cartas> cartasDadas = new ArrayList<>();
 
+    public void crearPalos() {
+        palos.add(new Palos("Espadas"));
+        palos.add(new Palos("Bastos"));
+        palos.add(new Palos("Copas"));
+        palos.add(new Palos("Oros"));
+    }
+
     public void crearBaraja() {
+        crearPalos();
         if (cartas.size() > 0){
             System.out.println("Ya existe una baraja");
         }else{
             System.out.println("Creando baraja...");
-            String[] palo = {"Espadas", "Bastos", "Copas", "Oros"};
             String[] numero = {"1", "2", "3", "4", "5", "6", "7", "10", "11", "12"};
-//        String[] numero = {"1", "2"};
-            for (int i = 0; i < palo.length; i++) {
+            for (int i = 0; i < palos.size(); i++) {
                 for (int j = 0; j < numero.length; j++) {
-                    cartas.add(new Cartas(numero[j], palo[i]));
+                    cartas.add(new Cartas(numero[j], palos.get(i)));
                 }
             }
-//            for (Cartas carta : cartas) {
-//                System.out.println(carta);
-//            }
             System.out.println("Se creó la baraja correctamente!");
         }
     }
@@ -64,7 +69,6 @@ public class BarajaService {
         } else {
             int cont = 0;
             while (cont < cantidad) {
-//                System.out.println(cartas.get(0)); //Para ver las cartas
                 System.out.println("Se dio la carta: " + cartas.get(0) + " al jugador");
                 cartasDadas.add(cartas.get(0));
                 cartas.remove(0);
