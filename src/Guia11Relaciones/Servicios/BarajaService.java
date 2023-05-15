@@ -9,7 +9,8 @@ import java.util.Scanner;
 
 public class BarajaService {
     Scanner leer = new Scanner(System.in);
-    ArrayList<Palos> palos = new ArrayList<>();;
+    ArrayList<Palos> palos = new ArrayList<>();
+    ;
     ArrayList<Cartas> cartas = new ArrayList<>();
     ArrayList<Cartas> cartasDadas = new ArrayList<>();
 
@@ -22,9 +23,9 @@ public class BarajaService {
 
     public void crearBaraja() {
         crearPalos();
-        if (cartas.size() > 0){
+        if (cartas.size() > 0) {
             System.out.println("Ya existe una baraja");
-        }else{
+        } else {
             System.out.println("Creando baraja...");
             String[] numero = {"1", "2", "3", "4", "5", "6", "7", "10", "11", "12"};
             for (int i = 0; i < palos.size(); i++) {
@@ -90,4 +91,6 @@ public class BarajaService {
             System.out.println(carta);
         }
     }
+
 }
+
