@@ -5,12 +5,12 @@ import Guia11Relaciones.Entidades.Palos;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Random;
 import java.util.Scanner;
 
 public class BarajaService {
     Scanner leer = new Scanner(System.in);
     ArrayList<Palos> palos = new ArrayList<>();
-    ;
     ArrayList<Cartas> cartas = new ArrayList<>();
     ArrayList<Cartas> cartasDadas = new ArrayList<>();
 
