@@ -26,16 +26,15 @@ public class RuletaService {
     public void llenarJuego(ArrayList<Jugador> jugadoresList,Revolver revolver){
         for (int i=0; i<6;i++){
             Jugador playerX = new Jugador();
-            String jugador = "Jugador ";
             playerX.setId((i+1));
-            playerX.setNombre(jugador.concat(String.valueOf(i+1)));
+            playerX.setNombre("Jugador "+(i+1));
             jugadoresList.add(playerX);
         }
-        revolver=revolver;
+        llenarRevolver(revolver);
     }
     public boolean mojar(Revolver revolverObj){
         boolean seMurio=false;
-        if (revolverObj.getPosActual()== revolverObj.getPosAgua()){
+        if (revolverObj.getPosActual()==revolverObj.getPosAgua()){
             seMurio=true;
         }
         return seMurio;
@@ -48,9 +47,9 @@ public class RuletaService {
         }
         return seMurio;
     }
-    public boolean ronda(Jugador jugador){
+    public boolean ronda(Jugador jugador,Revolver revolverObj){
         boolean juegoSigue = true;
-        if (jugador.getMojado()){
+        if (disparo(jugador,revolverObj)){
             juegoSigue=false;
         }
         return juegoSigue;

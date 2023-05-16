@@ -70,7 +70,8 @@ public class BarajaService {
         } else {
             int cont = 0;
             while (cont < cantidad) {
-                System.out.println("Se dio la carta: " + cartas.get(0) + " al jugador");
+                System.out.println("Se dio la carta: " + siguienteCarta() + " al jugador");
+//                System.out.println("Se dio la carta: " + cartas.get(0) + " al jugador");
                 cartasDadas.add(cartas.get(0));
                 cartas.remove(0);
                 cont++;
@@ -91,6 +92,5 @@ public class BarajaService {
             System.out.println(carta);
         }
     }
-
 }
 

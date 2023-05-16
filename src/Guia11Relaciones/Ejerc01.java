@@ -60,7 +60,7 @@ public class Ejerc01 {
             if (aux.getPerro() == null) {
                 System.out.println(aux.getNombre() + " " + aux.getApellido() + " no ha adoptado a ningun perro");
             } else {
-                System.out.println(aux.getNombre() + " " + aux.getApellido() + " a adoptado a " + aux.getPerro().getNombre() + " de raza " + aux.getPerro().getRaza());
+                System.out.println(aux.getNombre() + " " + aux.getApellido() + " ha adoptado a " + aux.getPerro().getNombre() + " de raza " + aux.getPerro().getRaza());
             }
 
         }
