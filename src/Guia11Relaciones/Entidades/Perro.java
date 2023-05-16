@@ -1,4 +1,5 @@
 package Guia11Relaciones.Entidades;
+
 /**
  * Realizar un programa para que una Persona pueda adoptar un Perro. Vamos a contar de dos
  * clases. Perro, que tendrá como atributos: nombre, raza, edad y tamaño; y la clase Persona con

@@ -30,6 +30,6 @@ public class Cartas {
 
     @Override
     public String toString() {
-        return numero+" de "+palo;
+        return numero + " de " + palo;
     }
 }

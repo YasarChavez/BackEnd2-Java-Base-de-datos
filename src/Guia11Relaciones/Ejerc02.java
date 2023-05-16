@@ -28,18 +28,18 @@ public class Ejerc02 {
         System.out.println("Disparando: ");
         for (int i = 0; i < jugadores.size(); i++) {
             System.out.println("Posicion revolver: " + revolver.getPosActual() + "\nPosicion agua: " + revolver.getPosAgua());
-            boolean muerto = !ruletaService.ronda(jugadores.get(i),revolver);
+            boolean muerto = !ruletaService.ronda(jugadores.get(i), revolver);
             System.out.println(jugadores.get(i).getNombre() + " Se dispara!");
-            if (ruletaService.disparo(jugadores.get(i), revolver)){
+            if (ruletaService.disparo(jugadores.get(i), revolver)) {
                 System.out.println("El " + jugadores.get(i).getNombre() + " Murio :/");
 //                muerto = true;
-            }else {
+            } else {
                 System.out.println("Sigue vivo!");
                 System.out.println();
                 ruletaService.siguienteChorro(revolver);
             }
-            if (muerto){
-               break;
+            if (muerto) {
+                break;
             }
         }
     }

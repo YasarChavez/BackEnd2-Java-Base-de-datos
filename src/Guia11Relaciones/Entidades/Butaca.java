@@ -40,6 +40,6 @@ public class Butaca {
 
     @Override
     public String toString() {
-        return numero +  letra + estado+"|";
+        return numero + letra + estado + "|";
     }
 }

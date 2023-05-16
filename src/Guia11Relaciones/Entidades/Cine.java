@@ -1,13 +1,12 @@
 package Guia11Relaciones.Entidades;
 
 /**
- *
  * De Cine nos interesa conocer la película que se está reproduciendo, la
  * sala con los espectadores y el precio de la entrada.
  */
 public class Cine {
     private Pelicula pelicula;
-    private  SalaCine sala;
+    private SalaCine sala;
     private double precio;
 
 

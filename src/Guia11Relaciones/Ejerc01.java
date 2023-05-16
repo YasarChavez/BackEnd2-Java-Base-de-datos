@@ -19,19 +19,19 @@ import java.util.Scanner;
 public class Ejerc01 {
     public static void main(String[] args) {
         Scanner leer = new Scanner(System.in);
-        AdopcionService adopcionService  = new AdopcionService();
+        AdopcionService adopcionService = new AdopcionService();
         List<Persona> personas = new ArrayList();
         List<Perro> perrosAdopcion = new ArrayList();
         //Cargar personas
         System.out.println("Cargar Personas");
         for (int i = 0; i < 2; i++) {
-            System.out.println("Persona "+(i+1)+":");
+            System.out.println("Persona " + (i + 1) + ":");
             personas.add(adopcionService.crearPersona());
         }
         //Cargar perros
         System.out.println("Cargar Perros");
         for (int i = 0; i < 2; i++) {
-            System.out.println("Perro "+(i+1)+":");
+            System.out.println("Perro " + (i + 1) + ":");
             perrosAdopcion.add(adopcionService.crearPerro());
         }
         System.out.println("Adoptando Perros:");
@@ -64,9 +64,6 @@ public class Ejerc01 {
             }
 
         }
-
-
-
 
 
     }

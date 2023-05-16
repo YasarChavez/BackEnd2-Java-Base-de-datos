@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 public class RecetaService {
     Scanner leer = new Scanner(System.in);
+
     /**
      * Crea una clase "Cocina" que tenga una lista de objetos "Receta". Luego,
      * crea métodos para agregar nuevas recetas a la lista, para buscar una
@@ -27,6 +28,7 @@ public class RecetaService {
         recetas.add(receta);
 
     }
+
     public void buscarReceta(ArrayList<Receta> recetas) {
         System.out.println("Ingrese el nombre de la receta a buscar");
         String nombre = leer.next();
@@ -37,6 +39,7 @@ public class RecetaService {
         }
 
     }
+
     public void obtenerRecetasDisponiblesConIngredientes(ArrayList<Receta> recetas) {
         System.out.println("Ingrese los ingredientes de la cocina");
         String ingrediente1 = leer.next();
@@ -44,12 +47,12 @@ public class RecetaService {
         String ingrediente3 = leer.next();
         System.out.println("Las recetas disponibles con los ingredientes de la cocina son:");
         for (Receta receta : recetas) {
-        //verificar si la receta tiene todos los ingredientes
-                if (receta.getIngrediente1().equals(ingrediente1) && receta.getIngrediente2().equals(ingrediente2) && receta.getIngrediente3().equals(ingrediente3)) {
-                    System.out.println("Receta disponible:");
-                    System.out.println(receta);
-                }
+            //verificar si la receta tiene todos los ingredientes
+            if (receta.getIngrediente1().equals(ingrediente1) && receta.getIngrediente2().equals(ingrediente2) && receta.getIngrediente3().equals(ingrediente3)) {
+                System.out.println("Receta disponible:");
+                System.out.println(receta);
             }
         }
     }
+}
 

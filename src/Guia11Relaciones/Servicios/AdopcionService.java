@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 public class AdopcionService {
     Scanner leer = new Scanner(System.in).useDelimiter("\n");
+
     /**
      * Realizar un programa para que una Persona pueda adoptar un Perro. Vamos a contar de dos
      * clases. Perro, que tendrá como atributos: nombre, raza, edad y tamaño; y la clase Persona con
@@ -15,7 +16,7 @@ public class AdopcionService {
      * pensar la lógica necesaria para asignarle a cada Persona un Perro y por ultimo, mostrar desde
      * la clase Persona, la información del Perro y de la Persona.
      */
-    public Persona crearPersona(){
+    public Persona crearPersona() {
         //Datos persona
         Persona persona = new Persona();
         System.out.println("Ingrese el nombre de la persona:");
@@ -28,7 +29,8 @@ public class AdopcionService {
         persona.setDocumento(leer.next());
         return persona;
     }
-    public Perro crearPerro(){
+
+    public Perro crearPerro() {
         //Datos perro
         Perro perro = new Perro();
         System.out.println("Ingrese el nombre del perro:");

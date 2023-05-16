@@ -1,4 +1,5 @@
 package Guia10Colecciones.Entidad;
+
 /**
  * Crea una clase "Cocina" que tenga una lista de objetos "Receta". Luego,
  * crea métodos para agregar nuevas recetas a la lista, para buscar una

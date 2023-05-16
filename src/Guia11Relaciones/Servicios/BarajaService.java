@@ -4,8 +4,6 @@ import Guia11Relaciones.Entidades.Cartas;
 import Guia11Relaciones.Entidades.Palos;
 
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Random;
 import java.util.Scanner;
 
 public class BarajaService {
