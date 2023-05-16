@@ -34,7 +34,6 @@ public class Ejerc02 {
             System.out.println("Dinero disponible: "+espectadores.get(i).getDineroDisponible());
             System.out.println("Edad: "+espectadores.get(i).getEdad());
             cineService.venderButaca(cine,salaCine,espectadores.get(i));
-            cineService.mostrarSalaCine(cine,salaCine);
         }
 
 

@@ -89,7 +89,7 @@ public class CineService {
                     System.out.println("Butaca no disponible");
                 }
             }while (!ubicado);
-
+            mostrarSalaCine(cine,salaCine);
         }
     }
 }
