@@ -75,8 +75,8 @@ public class CineService {
             do {
                 System.out.println("Ingrese la fila de la Butaca (1,2,3,4,5,6,7,8)");
                 String fila = leer.next();
-                int filas = Integer.parseInt(fila)-8;
-                filas=Math.abs(filas);
+                int filas =Math.abs(Integer.parseInt(fila)-8);
+//                filas=Math.abs(filas);
                 System.out.println("Ingrese la columna de la Butaca (A/1 B/2 C/3 D/4 E/5 F/6)");
                 String columna = leer.next();
                 int columnas = Integer.parseInt(columna)-1;
