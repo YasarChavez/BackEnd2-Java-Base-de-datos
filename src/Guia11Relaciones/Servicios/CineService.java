@@ -47,8 +47,9 @@ public class CineService {
         return salaX;
     }
 
-    public void mostrarSalaCine(SalaCine salaCine) {
-        System.out.println(salaCine.getPelicula().getTitulo());
+    public void mostrarSalaCine(Cine cine,SalaCine salaCine) {
+        System.out.println("Pelicula: "+salaCine.getPelicula().getTitulo());
+        System.out.println("Precio : "+cine.getPrecio());
         for (Butaca[] butacas : salaCine.getButacas()) {
             for (Butaca butaca : butacas) {
                 System.out.print(butaca);
@@ -68,20 +69,27 @@ public class CineService {
         if (!dineroSuficiente) {
             System.out.println("Espectador no cuenta con dinero suficiente");
         }
+
         if (mayorEdad && dineroSuficiente) {
-            System.out.println("Ingrese la fila de la Butaca (8/0 7/1  6/2 5/3 4/4 3/5 2/6 1/7)");
-            String fila = leer.next();
-            int filas = Integer.parseInt(fila);
-            System.out.println("Ingrese la columna de la Butaca (A/0 B/1 C/2 D/3 E/4 F/5)");
-            String columna = leer.next();
-            int columnas = Integer.parseInt(columna);
-            //Validar Butaca disponible
-            if (asientos[filas][columnas].getEstado().equals(" ")) {
-                asientos[filas][columnas].setEstado("X");
-                System.out.println("Se ha vendido la Butaca");
-            } else {
-                System.out.println("Butaca no disponible");
-            }
+            boolean ubicado =false;
+            do {
+                System.out.println("Ingrese la fila de la Butaca (1,2,3,4,5,6,7,8)");
+                String fila = leer.next();
+                int filas = Integer.parseInt(fila)-8;
+                filas=Math.abs(filas);
+                System.out.println("Ingrese la columna de la Butaca (A/1 B/2 C/3 D/4 E/5 F/6)");
+                String columna = leer.next();
+                int columnas = Integer.parseInt(columna)-1;
+                //Validar Butaca disponible
+                if (asientos[filas][columnas].getEstado().equals(" ")) {
+                    asientos[filas][columnas].setEstado("X");
+                    System.out.println("Se ha vendido la Butaca");
+                    ubicado = true;
+                } else {
+                    System.out.println("Butaca no disponible");
+                }
+            }while (!ubicado);
+
         }
     }
 }
