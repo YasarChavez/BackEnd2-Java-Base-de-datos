@@ -4,6 +4,7 @@ import Guia11Relaciones.Entidades.Cartas;
 import Guia11Relaciones.Entidades.Palos;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class BarajaService {
@@ -37,12 +38,13 @@ public class BarajaService {
 
     public void barajar() {
         System.out.println("Barajando...");
-        for (int i = 0; i < cartas.size(); i++) {
-            int j = (int) (Math.random() * cartas.size());
-            Cartas aux = cartas.get(i);
-            cartas.set(i, cartas.get(j));
-            cartas.set(j, aux);
-        }
+//        for (int i = 0; i < cartas.size(); i++) {
+//            int j = (int) (Math.random() * cartas.size());
+//            Cartas aux = cartas.get(i);
+//            cartas.set(i, cartas.get(j));
+//            cartas.set(j, aux);
+//        }
+        Collections.shuffle(cartas); // BY NICO SANTOS
         System.out.println("Se mezcló la baraja completamente!");
     }
 

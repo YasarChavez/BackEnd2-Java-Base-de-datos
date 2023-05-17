@@ -32,7 +32,6 @@ public class Ejerc02 {
             System.out.println(jugadores.get(i).getNombre() + " Se dispara!");
             if (ruletaService.disparo(jugadores.get(i), revolver)) {
                 System.out.println("El " + jugadores.get(i).getNombre() + " Murio :/");
-//                muerto = true;
             } else {
                 System.out.println("Sigue vivo!");
                 System.out.println();
