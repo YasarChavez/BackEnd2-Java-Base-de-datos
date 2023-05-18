@@ -192,15 +192,15 @@ public class SeguroService {
         vehiculoObj.setColor(leer.next());
         System.out.println("Ingrese el tipo: (camioneta, sedán, etc.) ");
         vehiculoObj.setTipo(leer.next());
-        System.out.println("Ingrese el numero de poliza: ");
-        int numeroPoliza = leer.nextInt();
-        for (Polizas poliza : polizas) {
-            if (poliza.getNumeroPoliza() == numeroPoliza) {
-                vehiculoObj.setPoliza(poliza);
-            } else {
-                System.out.println("Poliza no encontrada");
-            }
-        }
+//        System.out.println("Ingrese el numero de poliza: ");
+//        int numeroPoliza = leer.nextInt();
+//        for (Polizas poliza : polizas) {
+//            if (poliza.getNumeroPoliza() == numeroPoliza) {
+//                vehiculoObj.setPoliza(poliza);
+//            } else {
+//                System.out.println("Poliza no encontrada");
+//            }
+//        }
         for (Clientes duenio : clientes) {
             if (duenio.getDocumento() == documento) {
                 vehiculoObj.setDuenio(duenio);
@@ -261,7 +261,7 @@ public class SeguroService {
                             System.out.println("Ingrese el nuevo numero de poliza: ");
                             int numeroPoliza = leer.nextInt();
                             for (Polizas poliza : polizas) {
-                                if (poliza.getNumeroPoliza() == numeroPoliza) {
+                                if (poliza.getNumeroPoliza() == numeroPoliza && poliza.getCliente().getDocumento() == documento) {
                                     vehiculos.get(i).setPoliza(poliza);
                                 } else {
                                     System.out.println("Poliza no encontrada");
@@ -326,4 +326,141 @@ public class SeguroService {
         }
     }
 
+    public void gestionarSeguros() {
+        System.out.println("*Gestion de seguros*");
+        System.out.println("Ingrese el documento del cliente: ");
+        double documento = leer.nextDouble();
+        for (int i = 0; i < clientes.size(); i++) {
+            if (clientes.get(i).getDocumento() == documento) {
+                System.out.println("Cliente encontrado");
+                int menu = 0;
+                do {
+                    System.out.println("1. Crear seguro");
+                    System.out.println("2. Eliminar seguro");
+                    System.out.println("3. Ver seguros");
+                    System.out.println("4. Salir");
+                    menu = leer.nextInt();
+                    switch (menu) {
+                        case 1:
+                            crearSeguro(documento);
+                            break;
+                        case 2:
+                            eliminarSeguro(documento);
+                            break;
+                        case 3:
+                            verSeguros(documento);
+                            break;
+                        case 4:
+                            System.out.println("Saliendo...");
+                            break;
+                        default:
+                            System.out.println("Opcion no valida");
+                            break;
+                    }
+                } while (menu != 4);
+            } else {
+                System.out.println("Cliente no encontrado");
+            }
+        }
+    }
+
+    private void verSeguros(double documento) {
+        System.out.println("Seguros del cliente: ");
+        for (int i = 0; i < polizas.size(); i++) {
+            if (polizas.get(i).getCliente().getDocumento() == documento) {
+                System.out.println(polizas.get(i));
+            } else {
+                System.out.println("Seguros no encontrados");
+            }
+            System.out.println();
+        }
+    }
+
+    private void eliminarSeguro(double documento) {
+        System.out.println("Ingrese el numero de seguro que desea eliminar: ");
+        int numeroSeguro = leer.nextInt();
+        for (int i = 0; i < polizas.size(); i++) {
+            if (polizas.get(i).getNumeroPoliza() == numeroSeguro && polizas.get(i).getCliente().getDocumento() == documento) {
+                System.out.println("Seguro eliminado");
+                polizas.remove(i);
+            } else {
+                System.out.println("Seguro no encontrado");
+            }
+        }
+    }
+
+    private void crearSeguro(double documento) {
+        for (int i = 0; i < clientes.size(); i++) {
+            if (clientes.get(i).getDocumento() == documento) {
+                Polizas polizaX = new Polizas();
+                /**
+                 *     private Vehiculo vehiculo;
+                 *     private Clientes cliente;
+                 *     private double numeroPoliza;
+                 *     private String fechaInicio;
+                 *     private String fechaFin;
+                 *     private int numeroCuotas;
+                 *     private String formaPago;
+                 *     private double totalAsegurado;
+                 *     private boolean incluyeGranizo;
+                 *     private double montoMaximoGranizo;
+                 *     private String tipoCobertura;
+                 */
+                for (Clientes cliente : clientes) {
+                    if (cliente.getDocumento() == documento) {
+                        System.out.println("Ingrese el numero de poliza: ");
+                        double numeroPoliza = leer.nextDouble();
+                        for (Polizas poliza : polizas) {
+                            if (poliza.getNumeroPoliza() == numeroPoliza) {
+                                System.out.println("Poliza ya existe");
+                            } else {
+                                polizaX.setNumeroPoliza(numeroPoliza);
+                            }
+                        }
+                        System.out.println("Seleccione un vehiculo: (por numero de motor) ");
+                        for (Vehiculo vehiculo : vehiculos) {
+                            if (vehiculo.getDuenio().getDocumento() == documento) {
+                                System.out.println(vehiculo.getMarca());
+                                System.out.println(vehiculo.getModelo());
+                                System.out.println(vehiculo.getNumeroMotor());
+                            }
+                        }
+                        double numeroMotor = leer.nextDouble();
+                        boolean encontrado = false;
+                        do {
+                            for (Vehiculo vehiculo : vehiculos) {
+                                if (vehiculo.getNumeroMotor() == numeroMotor && vehiculo.getDuenio().getDocumento() == documento && vehiculo.getPoliza() == null) {
+                                    polizaX.setVehiculo(vehiculo);
+                                    encontrado = true;
+                                } else if (vehiculo.getNumeroMotor() == numeroMotor && vehiculo.getDuenio().getDocumento() == documento && vehiculo.getPoliza() != null) {
+                                    System.out.println("El vehiculo ya tiene un seguro");
+                                } else {
+                                    System.out.println("Vehiculo no encontrado, intente nuevamente");
+                                }
+                            }
+                        } while (!encontrado);
+                        System.out.println("Ingrese la Fecha de Inicio");
+                        polizaX.setFechaInicio(leer.next());
+                        System.out.println("Ingrese la Fecha de Fin");
+                        polizaX.setFechaFin(leer.next());
+                        System.out.println("Ingrese el numero de cuotas");
+                        polizaX.setNumeroCuotas(leer.nextInt());
+                        System.out.println("Ingrese la forma de pago");
+                        polizaX.setFormaPago(leer.next());
+                        System.out.println("Ingrese el total asegurado");
+                        polizaX.setTotalAsegurado(leer.nextDouble());
+                        System.out.println("Ingrese si incluye granizo (true/false) por defecto es false");
+                        polizaX.setIncluyeGranizo(leer.nextBoolean());
+                        System.out.println("Ingrese el monto maximo de granizo");
+                        polizaX.setMontoMaximoGranizo(leer.nextDouble());
+                        System.out.println("Ingrese el tipo de cobertura");
+                        polizaX.setTipoCobertura(leer.next());
+                        polizas.add(polizaX);
+                    }
+                }
+            } else {
+                System.out.println("Cliente no encontrado");
+            }
+        }
+    }
 }

@@ -13,7 +13,8 @@ public class Ejerc03 {
         do {
             System.out.println("1. Gestionar Clientes");
             System.out.println("2. Gestionar Vehiculos");
-            System.out.println("3. Salir");
+            System.out.println("3. Gestionar Seguros");
+            System.out.println("4. Salir");
             menu = leer.nextInt();
             switch (menu) {
                 case 1:
@@ -23,12 +24,14 @@ public class Ejerc03 {
                     seguroService.gestionarVehiculos();
                     break;
                 case 3:
+                    seguroService.gestionarSeguros();
+                case 4:
                     System.out.println("Saliendo...");
                     break;
                 default:
                     System.out.println("Opcion incorrecta");
                     break;
             }
-        } while (menu != 3);
+        } while (menu != 4);
     }
 }
