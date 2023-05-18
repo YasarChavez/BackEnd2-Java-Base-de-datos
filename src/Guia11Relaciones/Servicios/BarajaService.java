@@ -27,6 +27,7 @@ public class BarajaService {
         } else {
             System.out.println("Creando baraja...");
             String[] numero = {"1", "2", "3", "4", "5", "6", "7", "10", "11", "12"};
+
             for (int i = 0; i < palos.size(); i++) {
                 for (int j = 0; j < numero.length; j++) {
                     cartas.add(new Cartas(numero[j], palos.get(i)));
@@ -71,7 +72,6 @@ public class BarajaService {
             int cont = 0;
             while (cont < cantidad) {
                 System.out.println("Se dio la carta: " + siguienteCarta() + " al jugador");
-//                System.out.println("Se dio la carta: " + cartas.get(0) + " al jugador");
                 cartasDadas.add(cartas.get(0));
                 cartas.remove(0);
                 cont++;

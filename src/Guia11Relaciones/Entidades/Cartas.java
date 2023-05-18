@@ -1,5 +1,6 @@
 package Guia11Relaciones.Entidades;
 
+
 public class Cartas {
     private String numero;
     private Palos palo;
@@ -11,6 +12,7 @@ public class Cartas {
         this.numero = numero;
         this.palo = palo;
     }
+
 
     public String getNumero() {
         return numero;
