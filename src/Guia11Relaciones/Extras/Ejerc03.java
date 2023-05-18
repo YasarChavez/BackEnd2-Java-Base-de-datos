@@ -8,9 +8,11 @@ public class Ejerc03 {
     public static void main(String[] args) {
         Scanner leer = new Scanner(System.in).useDelimiter("\n");
         SeguroService seguroService = new SeguroService();
-        System.out.println("Elija una opcion: ");
+
         int menu = 0;
         do {
+            System.out.println();
+            System.out.println("Elija una opcion: ");
             System.out.println("1. Cargar Clientes");
             System.out.println("2. Cargar Vehiculos");
             System.out.println("3. Crear Seguros(Poliza)");
