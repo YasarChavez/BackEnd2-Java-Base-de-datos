@@ -11,27 +11,32 @@ public class Ejerc03 {
         System.out.println("Elija una opcion: ");
         int menu = 0;
         do {
-            System.out.println("1. Gestionar Clientes");
-            System.out.println("2. Gestionar Vehiculos");
-            System.out.println("3. Gestionar Seguros");
-            System.out.println("4. Salir");
+            System.out.println("1. Cargar Clientes");
+            System.out.println("2. Cargar Vehiculos");
+            System.out.println("3. Crear Seguros");
+            System.out.println("4. Mostrar Seguros");
+            System.out.println("8. Salir");
             menu = leer.nextInt();
             switch (menu) {
                 case 1:
-                    seguroService.gestionarClientes();
+                    seguroService.cargarClientes();
                     break;
                 case 2:
-                    seguroService.gestionarVehiculos();
+                    seguroService.cargarVehiculos();
                     break;
                 case 3:
-                    seguroService.gestionarSeguros();
+                    seguroService.crearSeguros();
+                    break;
                 case 4:
+                    seguroService.mostrarSeguros();
+                    break;
+                case 8:
                     System.out.println("Saliendo...");
                     break;
                 default:
                     System.out.println("Opcion incorrecta");
                     break;
             }
-        } while (menu != 4);
+        } while (menu != 8);
     }
 }

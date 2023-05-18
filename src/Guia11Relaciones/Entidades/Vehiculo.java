@@ -1,10 +1,10 @@
 package Guia11Relaciones.Entidades;
 
-/**
- * Se registra la información de cada vehículo asegurado. Marca,
- * modelo, año, número de motor, chasis, color, tipo (camioneta, sedán, etc.).
- */
 public class Vehiculo {
+    /**
+     * Se registra la información de cada vehículo asegurado. Marca,
+     * modelo, año, número de motor, chasis, color, tipo (camioneta, sedán, etc.).
+     */
     private String marca;
     private String modelo;
     private int anio;
@@ -12,13 +12,11 @@ public class Vehiculo {
     private String chasis;
     private String color;
     private String tipo;
-    private Polizas poliza;
-    private Clientes duenio;
 
     public Vehiculo() {
     }
 
-    public Vehiculo(String marca, String modelo, int anio, double numeroMotor, String chasis, String color, String tipo, Polizas poliza, Clientes duenio) {
+    public Vehiculo(String marca, String modelo, int anio, double numeroMotor, String chasis, String color, String tipo) {
         this.marca = marca;
         this.modelo = modelo;
         this.anio = anio;
@@ -26,8 +24,6 @@ public class Vehiculo {
         this.chasis = chasis;
         this.color = color;
         this.tipo = tipo;
-        this.poliza = poliza;
-        this.duenio = duenio;
     }
 
     public String getMarca() {
@@ -86,34 +82,16 @@ public class Vehiculo {
         this.tipo = tipo;
     }
 
-    public Polizas getPoliza() {
-        return poliza;
-    }
-
-    public void setPoliza(Polizas poliza) {
-        this.poliza = poliza;
-    }
-
-    public Clientes getDuenio() {
-        return duenio;
-    }
-
-    public void setDuenio(Clientes duenio) {
-        this.duenio = duenio;
-    }
-
     @Override
     public String toString() {
-        return "vehiculosSeguro{" +
+        return "Vehiculo{" +
                 "marca='" + marca + '\'' +
                 ", modelo='" + modelo + '\'' +
                 ", anio=" + anio +
-                ", numeroMotor=" + numeroMotor +
+                ", numeroMotor='" + numeroMotor + '\'' +
                 ", chasis='" + chasis + '\'' +
                 ", color='" + color + '\'' +
                 ", tipo='" + tipo + '\'' +
-                ", poliza=" + poliza +
-                ", duenio=" + duenio +
                 '}';
     }
 }
