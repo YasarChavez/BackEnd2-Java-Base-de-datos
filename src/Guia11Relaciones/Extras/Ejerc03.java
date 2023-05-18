@@ -13,10 +13,11 @@ public class Ejerc03 {
         do {
             System.out.println("1. Cargar Clientes");
             System.out.println("2. Cargar Vehiculos");
-            System.out.println("3. Crear Seguros");
+            System.out.println("3. Crear Seguros(Poliza)");
             System.out.println("4. Mostrar Seguros");
             System.out.println("5. Mostrar Clientes");
             System.out.println("6. Mostrar Vehiculos");
+            System.out.println("7. Gestion de Cuotas");
             System.out.println("8. Salir");
             menu = leer.nextInt();
             switch (menu) {
@@ -38,7 +39,9 @@ public class Ejerc03 {
                 case 6:
                     seguroService.mostrarVehiculos();
                     break;
-
+                case 7:
+                    seguroService.gestionarCuotas();
+                    break;
                 case 8:
                     System.out.println("Saliendo...");
                     break;

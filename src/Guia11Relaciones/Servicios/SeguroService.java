@@ -136,4 +136,26 @@ public class SeguroService {
             System.out.println(vehiculos.get(i).getMarca() + " " + vehiculos.get(i).getModelo());
         }
     }
+    public void gestionarCuotas(){
+        System.out.println("Ingrese el numero de la poliza que desea gestionar");
+        int opcion = leer.nextInt();
+        for (int i = 0; i < polizas.size(); i++) {
+            if (polizas.get(i).getNumeroPoliza() == opcion) {
+                /**
+                 * Se registrarán y podrán consultar las cuotas generadas en cada póliza.
+                 * Esas cuotas van a contener la siguiente información: número de cuota, monto total de la
+                 * cuota, si está o no pagada, fecha de vencimiento, forma de pago (efectivo, transferencia,
+                 * etc.).
+                 */
+                System.out.println("Cuotas");
+                System.out.println(polizas.get(i).getCantidadCuotas());
+                System.out.println("Monto total");
+                System.out.println(polizas.get(i).getMontoAsegurado()/(polizas.get(i).getCantidadCuotas()));
+                System.out.println("Fecha de vencimiento");
+                System.out.println(polizas.get(i).getFechaFin());
+                System.out.println("Forma de pago");
+                System.out.println(polizas.get(i).getFormaPago());
+            }
+        }
+    }
 }
