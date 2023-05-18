@@ -195,8 +195,7 @@ public class SeguroService {
     public void gestionarCuotas() {
         System.out.println("Fecha Actual:");
         Calendar fechaActual = new GregorianCalendar();
-        fechaActual.add(Calendar.MONTH, 1);
-        System.out.println(fechaActual.get(Calendar.YEAR) + "/" + fechaActual.get(Calendar.MONTH) + "/" + fechaActual.get(Calendar.DAY_OF_MONTH));
+        System.out.println(fechaActual.get(Calendar.YEAR) + "/" +( fechaActual.get(Calendar.MONTH)+1) + "/" + fechaActual.get(Calendar.DAY_OF_MONTH));
         System.out.println("Desea registrar un pago o gestionar las cuotas? (1.Pago / 2.Gestionar)");
         int opcion = leer.nextInt();
         if (opcion == 1) {
