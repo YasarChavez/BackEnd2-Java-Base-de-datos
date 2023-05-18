@@ -23,22 +23,9 @@ public class Poliza {
     private String tipoCobertura;
     private Vehiculo vehiculo;
     private Cliente cliente;
+    private boolean pagada;
 
     public Poliza() {
-    }
-
-    public Poliza(int numeroPoliza, Calendar fechaInicio, Calendar fechaFin, int cantidadCuotas, String formaPago, double montoAsegurado, boolean granizo, double montoMaximoGranizo, String tipoCobertura, Vehiculo vehiculo, Cliente cliente) {
-        this.numeroPoliza = numeroPoliza;
-        this.fechaInicio = fechaInicio;
-        this.fechaFin = fechaFin;
-        this.cantidadCuotas = cantidadCuotas;
-        this.formaPago = formaPago;
-        this.montoAsegurado = montoAsegurado;
-        this.granizo = granizo;
-        this.montoMaximoGranizo = montoMaximoGranizo;
-        this.tipoCobertura = tipoCobertura;
-        this.vehiculo = vehiculo;
-        this.cliente = cliente;
     }
 
     public int getNumeroPoliza() {
@@ -129,4 +116,11 @@ public class Poliza {
         this.cliente = cliente;
     }
 
+    public boolean isPagada() {
+        return pagada;
+    }
+
+    public void setPagada(boolean pagada) {
+        this.pagada = pagada;
+    }
 }

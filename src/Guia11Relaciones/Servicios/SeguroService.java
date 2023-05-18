@@ -37,6 +37,7 @@ public class SeguroService {
 
         System.out.println("Se Crearon los Clientes");
     }
+
     public void cargarVehiculos() {
         Vehiculo v1 = new Vehiculo();
         v1.setMarca("Ford");
@@ -97,7 +98,7 @@ public class SeguroService {
         pX.setTipoCobertura(leer.next());
 
 
-        System.out.println("Seleccione el vehiculo que desea asociar a la poliza(numero de motor)");
+        System.out.println("Seleccione el vehiculo que desea asociar a la poliza: (numero de motor)");
         for (int i = 0; i < vehiculos.size(); i++) {
             System.out.println(vehiculos.get(i).toString());
         }
@@ -107,7 +108,7 @@ public class SeguroService {
                 pX.setVehiculo(vehiculos.get(i));
             }
         }
-        System.out.println("Seleccione el cliente que desea asociar a la poliza(numero de documento)");
+        System.out.println("Seleccione el cliente que desea asociar a la poliza: (numero de documento)");
         for (int i = 0; i < clientes.size(); i++) {
             System.out.println(clientes.get(i).toString());
         }
@@ -117,46 +118,89 @@ public class SeguroService {
                 pX.setCliente(clientes.get(i));
                 vehiculos.get(i).setPoliza(pX);
                 polizas.add(pX);
-            }else {
-                System.out.println("Hubo un error");
             }
         }
     }
 
     public void mostrarSeguros() {
         for (int i = 0; i < polizas.size(); i++) {
-            System.out.println(polizas.get(i).getCliente().getNombre() + " " + polizas.get(i).getCliente().getApellido() + " " + polizas.get(i).getVehiculo().getMarca() + " " + polizas.get(i).getVehiculo().getModelo());
+            System.out.println(
+                    "Nombre Cliente: " + polizas.get(i).getCliente().getNombre()
+                            + "Apellido Cliente: " + polizas.get(i).getCliente().getApellido()
+                            + "Vehiculo: " + polizas.get(i).getVehiculo().getMarca()
+                            + "Modelo: " + polizas.get(i).getVehiculo().getModelo()
+                            + "Numero Motor:" + vehiculos.get(i).getNumeroMotor()
+                            + "Numero Poliza:" + polizas.get(i).getNumeroPoliza()
+                            + "Fecha Inicio:" + polizas.get(i).getFechaInicio().get(Calendar.YEAR) + "/" + polizas.get(i).getFechaInicio().get(Calendar.MONTH) + "/" + polizas.get(i).getFechaInicio().get(Calendar.DAY_OF_MONTH)
+                            + "Fecha Fin:" + polizas.get(i).getFechaFin().get(Calendar.YEAR) + "/" + polizas.get(i).getFechaFin().get(Calendar.MONTH) + "/" + polizas.get(i).getFechaFin().get(Calendar.DAY_OF_MONTH)
+            );
         }
     }
 
     public void mostrarClientes() {
         for (int i = 0; i < clientes.size(); i++) {
-            System.out.println(clientes.get(i).getNombre() + " " + clientes.get(i).getApellido());
+            System.out.println(
+                    "Nombre: " + clientes.get(i).getNombre()
+                            + "Apellido: " + clientes.get(i).getApellido()
+                            + "Documento: " + clientes.get(i).getDocumento()
+                            + "Direccion: " + clientes.get(i).getDomicilio()
+                            + "Telefono: " + clientes.get(i).getTelefono()
+            );
         }
     }
 
     public void mostrarVehiculos() {
         for (int i = 0; i < vehiculos.size(); i++) {
             if (vehiculos.get(i).getPoliza() != null) {
-                System.out.println(vehiculos.get(i).getMarca() + " " + vehiculos.get(i).getModelo()+" "+vehiculos.get(i).getPoliza().getNumeroPoliza());
-            }else {
-                System.out.println(vehiculos.get(i).getMarca() + " " + vehiculos.get(i).getModelo()+" Sin poliza");
+                System.out.println("Marca: "+vehiculos.get(i).getMarca()
+                        + " " + " Modelo: "+vehiculos.get(i).getModelo()
+                        + " " + "Poliza: "+vehiculos.get(i).getPoliza().getNumeroPoliza());
+            } else {
+                System.out.println("Marca: "+vehiculos.get(i).getMarca() +
+                        "Modelo: " + vehiculos.get(i).getModelo() + " / Sin poliza");
             }
         }
     }
-    public void gestionarCuotas(){
-        System.out.println("Ingrese el numero de la poliza que desea gestionar");
+
+    public void gestionarCuotas() {
+        System.out.println("Fecha Actual:");
+        Calendar fechaActual = new GregorianCalendar();
+        System.out.println(fechaActual.get(Calendar.YEAR) + "/" + fechaActual.get(Calendar.MONTH) + "/" + fechaActual.get(Calendar.DAY_OF_MONTH));
+        System.out.println("Desea registrar un pago o gestionar las cuotas? (1.Pago / 2.Gestionar)");
         int opcion = leer.nextInt();
-        for (int i = 0; i < polizas.size(); i++) {
-            if (polizas.get(i).getNumeroPoliza() == opcion) {
-                System.out.println("Cuotas");
-                System.out.println(polizas.get(i).getCantidadCuotas());
-                System.out.println("Monto total");
-                System.out.println(polizas.get(i).getMontoAsegurado()/(polizas.get(i).getCantidadCuotas()));
-                System.out.println("Fecha de vencimiento");
-                System.out.println(polizas.get(i).getFechaFin());
-                System.out.println("Forma de pago");
-                System.out.println(polizas.get(i).getFormaPago());
+        if (opcion == 1) {
+            System.out.println("Ingrese el numero de la poliza que desea gestionar");
+            int opcion2 = leer.nextInt();
+            for (int i = 0; i < polizas.size(); i++) {
+                if (polizas.get(i).getNumeroPoliza() == opcion2) {
+                    System.out.println("Debe pagar: " + polizas.get(i).getMontoAsegurado() / (polizas.get(i).getCantidadCuotas()));
+                    System.out.println("Ingrese el monto del pago");
+                    double monto = leer.nextDouble();
+                    if (monto >= polizas.get(i).getMontoAsegurado() / (polizas.get(i).getCantidadCuotas())) {
+                        System.out.println("Pago exitoso");
+                        polizas.get(i).setPagada(true);
+                    } else {
+                        System.out.println("Pago fallido");
+                        polizas.get(i).setPagada(false);
+                    }
+                }
+            }
+        } else if (opcion == 2) {
+            System.out.println("Ingrese el numero de la poliza que desea gestionar");
+            int opcion3 = leer.nextInt();
+            for (int i = 0; i < polizas.size(); i++) {
+                if (polizas.get(i).getNumeroPoliza() == opcion3) {
+                    System.out.println("Cuotas");
+                    System.out.println(polizas.get(i).getCantidadCuotas());
+                    System.out.println("Monto total");
+                    System.out.println(polizas.get(i).getMontoAsegurado() / (polizas.get(i).getCantidadCuotas()));
+                    System.out.println("Fecha de vencimiento");
+                    System.out.println(polizas.get(i).getFechaFin().get(Calendar.YEAR) + "/" + polizas.get(i).getFechaFin().get(Calendar.MONTH) + "/" + polizas.get(i).getFechaFin().get(Calendar.DAY_OF_MONTH) + 1);
+                    System.out.println("Forma de pago");
+                    System.out.println(polizas.get(i).getFormaPago());
+                    System.out.println("Pagada:");
+                    System.out.println(polizas.get(i).isPagada());
+                }
             }
         }
     }
