@@ -30,6 +30,7 @@ public class SeguroService {
         c2.setDomicilio("Av. Siempreviva 456");
         c2.setTelefono("456123");
         c2.setMail("XXXXXXXXXXXXXX");
+        clientes.add(c2);
     }
     public void cargarVehiculos() {
         Vehiculo v1 = new Vehiculo();
@@ -62,7 +63,7 @@ public class SeguroService {
         p1.setMontoAsegurado(10000);
         p1.setGranizo(true);
         p1.setMontoMaximoGranizo(1000);
-        p1.setTipoCobertura("Cesantias");
+        p1.setTipoCobertura("Completa");
         System.out.println("Seleccione el vehiculo que desea asociar a la poliza(numero de motor)");
         for (int i = 0; i < vehiculos.size(); i++) {
             System.out.println(vehiculos.get(i).toString());
@@ -94,7 +95,7 @@ public class SeguroService {
         p2.setMontoAsegurado(10000);
         p2.setGranizo(true);
         p2.setMontoMaximoGranizo(1000);
-        p2.setTipoCobertura("Cesantias");
+        p2.setTipoCobertura("Contra Terceros");
         System.out.println("Seleccione el vehiculo que desea asociar a la poliza(numero de motor)");
         for (int i = 0; i < vehiculos.size(); i++) {
             System.out.println(vehiculos.get(i).toString());
@@ -109,6 +110,7 @@ public class SeguroService {
         for (int i = 0; i < clientes.size(); i++) {
             System.out.println(clientes.get(i).toString());
         }
+        opcion = leer.nextDouble();
         for (int i = 0; i < clientes.size(); i++) {
             if (clientes.get(i).getDocumento() == opcion) {
                 p2.setCliente(clientes.get(i));
@@ -119,7 +121,19 @@ public class SeguroService {
 
     public void mostrarSeguros() {
         for (int i = 0; i < polizas.size(); i++) {
-            System.out.println(polizas.get(i).toString());
+            System.out.println(polizas.get(i).getCliente().getNombre() + " " + polizas.get(i).getCliente().getApellido() + " " + polizas.get(i).getVehiculo().getMarca() + " " + polizas.get(i).getVehiculo().getModelo());
+        }
+    }
+
+    public void mostrarClientes() {
+        for (int i = 0; i < clientes.size(); i++) {
+            System.out.println(clientes.get(i).getNombre() + " " + clientes.get(i).getApellido());
+        }
+    }
+
+    public void mostrarVehiculos() {
+        for (int i = 0; i < vehiculos.size(); i++) {
+            System.out.println(vehiculos.get(i).getMarca() + " " + vehiculos.get(i).getModelo());
         }
     }
 }
