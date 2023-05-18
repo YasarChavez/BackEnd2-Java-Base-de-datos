@@ -12,11 +12,12 @@ public class Vehiculo {
     private String chasis;
     private String color;
     private String tipo;
+    private Poliza poliza;
 
     public Vehiculo() {
     }
 
-    public Vehiculo(String marca, String modelo, int anio, double numeroMotor, String chasis, String color, String tipo) {
+    public Vehiculo(String marca, String modelo, int anio, double numeroMotor, String chasis, String color, String tipo, Poliza poliza) {
         this.marca = marca;
         this.modelo = modelo;
         this.anio = anio;
@@ -24,6 +25,7 @@ public class Vehiculo {
         this.chasis = chasis;
         this.color = color;
         this.tipo = tipo;
+        this.poliza = poliza;
     }
 
     public String getMarca() {
@@ -82,16 +84,25 @@ public class Vehiculo {
         this.tipo = tipo;
     }
 
+    public Poliza getPoliza() {
+        return poliza;
+    }
+
+    public void setPoliza(Poliza poliza) {
+        this.poliza = poliza;
+    }
+
     @Override
     public String toString() {
         return "Vehiculo{" +
                 "marca='" + marca + '\'' +
                 ", modelo='" + modelo + '\'' +
                 ", anio=" + anio +
-                ", numeroMotor='" + numeroMotor + '\'' +
+                ", numeroMotor=" + numeroMotor +
                 ", chasis='" + chasis + '\'' +
                 ", color='" + color + '\'' +
                 ", tipo='" + tipo + '\'' +
+                ", poliza=" + poliza +
                 '}';
     }
 }

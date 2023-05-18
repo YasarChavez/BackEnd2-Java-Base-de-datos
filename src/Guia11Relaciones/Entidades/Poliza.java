@@ -1,5 +1,7 @@
 package Guia11Relaciones.Entidades;
 
+import java.util.Calendar;
+
 public class Poliza {
     /**
      * Se registrará una póliza, donde se guardará los datos tanto de un
@@ -11,8 +13,8 @@ public class Poliza {
      * muchos a uno o de muchos a muchos.
      */
     private int numeroPoliza;
-    private String fechaInicio;
-    private String fechaFin;
+    private Calendar fechaInicio;
+    private Calendar fechaFin;
     private int cantidadCuotas;
     private String formaPago;
     private double montoAsegurado;
@@ -25,7 +27,7 @@ public class Poliza {
     public Poliza() {
     }
 
-    public Poliza(int numeroPoliza, String fechaInicio, String fechaFin, int cantidadCuotas, String formaPago, double montoAsegurado, boolean granizo, double montoMaximoGranizo, String tipoCobertura, Vehiculo vehiculo, Cliente cliente) {
+    public Poliza(int numeroPoliza, Calendar fechaInicio, Calendar fechaFin, int cantidadCuotas, String formaPago, double montoAsegurado, boolean granizo, double montoMaximoGranizo, String tipoCobertura, Vehiculo vehiculo, Cliente cliente) {
         this.numeroPoliza = numeroPoliza;
         this.fechaInicio = fechaInicio;
         this.fechaFin = fechaFin;
@@ -47,19 +49,19 @@ public class Poliza {
         this.numeroPoliza = numeroPoliza;
     }
 
-    public String getFechaInicio() {
+    public Calendar getFechaInicio() {
         return fechaInicio;
     }
 
-    public void setFechaInicio(String fechaInicio) {
+    public void setFechaInicio(Calendar fechaInicio) {
         this.fechaInicio = fechaInicio;
     }
 
-    public String getFechaFin() {
+    public Calendar getFechaFin() {
         return fechaFin;
     }
 
-    public void setFechaFin(String fechaFin) {
+    public void setFechaFin(Calendar fechaFin) {
         this.fechaFin = fechaFin;
     }
 
@@ -127,20 +129,4 @@ public class Poliza {
         this.cliente = cliente;
     }
 
-    @Override
-    public String toString() {
-        return "Poliza{" +
-                "numeroPoliza=" + numeroPoliza +
-                ", fechaInicio='" + fechaInicio + '\'' +
-                ", fechaFin='" + fechaFin + '\'' +
-                ", cantidadCuotas=" + cantidadCuotas +
-                ", formaPago='" + formaPago + '\'' +
-                ", montoAsegurado=" + montoAsegurado +
-                ", granizo=" + granizo +
-                ", montoMaximoGranizo=" + montoMaximoGranizo +
-                ", tipoCobertura='" + tipoCobertura + '\'' +
-                ", vehiculo=" + vehiculo +
-                ", cliente=" + cliente +
-                '}';
-    }
 }
