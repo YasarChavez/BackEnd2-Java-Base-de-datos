@@ -4,7 +4,10 @@ import Guia11Relaciones.Entidades.Cliente;
 import Guia11Relaciones.Entidades.Poliza;
 import Guia11Relaciones.Entidades.Vehiculo;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import java.util.Scanner;
 
 public class SeguroService {
     ArrayList<Cliente> clientes = new ArrayList<>();
@@ -179,13 +182,13 @@ public class SeguroService {
                             "Marca: " + vehiculos.get(i).getMarca()
                                     + "\nModelo: " + vehiculos.get(i).getModelo()
                                     + "\nNumero Motor: " + vehiculos.get(i).getNumeroMotor()
-                                    + "\nPoliza: " + vehiculos.get(i).getPoliza().getNumeroPoliza()+"\n"
+                                    + "\nPoliza: " + vehiculos.get(i).getPoliza().getNumeroPoliza() + "\n"
                     );
                 } else {
                     System.out.println(
                             "Marca: " + vehiculos.get(i).getMarca()
                                     + "\nModelo: " + vehiculos.get(i).getModelo()
-                                    + "\nNumero Motor: " + vehiculos.get(i).getNumeroMotor() + " / Sin poliza"+"\n"
+                                    + "\nNumero Motor: " + vehiculos.get(i).getNumeroMotor() + " / Sin poliza" + "\n"
                     );
                 }
             }
@@ -195,7 +198,7 @@ public class SeguroService {
     public void gestionarCuotas() {
         System.out.println("Fecha Actual:");
         Calendar fechaActual = new GregorianCalendar();
-        System.out.println(fechaActual.get(Calendar.YEAR) + "/" +( fechaActual.get(Calendar.MONTH)+1) + "/" + fechaActual.get(Calendar.DAY_OF_MONTH));
+        System.out.println(fechaActual.get(Calendar.YEAR) + "/" + (fechaActual.get(Calendar.MONTH) + 1) + "/" + fechaActual.get(Calendar.DAY_OF_MONTH));
         System.out.println("Desea registrar un pago o gestionar las cuotas? (1.Pago / 2.Gestionar)");
         int opcion = leer.nextInt();
         if (opcion == 1) {
