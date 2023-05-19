@@ -13,6 +13,7 @@ public class Vehiculo {
     private String color;
     private String tipo;
     private Poliza poliza;
+    private Cliente cliente;
 
     public Vehiculo() {
     }
@@ -26,6 +27,14 @@ public class Vehiculo {
         this.color = color;
         this.tipo = tipo;
         this.poliza = poliza;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 
     public String getMarca() {
@@ -103,6 +112,7 @@ public class Vehiculo {
                 ", color='" + color + '\'' +
                 ", tipo='" + tipo + '\'' +
                 ", poliza=" + poliza +
+                ", cliente=" + cliente +
                 '}';
     }
 }

@@ -63,7 +63,10 @@ public class SeguroService {
     }
 
     public void crearSeguros() {
+        ArrayList<Vehiculo> vehiculosCliente = new ArrayList<>();
+        ArrayList<Poliza> polizasCliente = new ArrayList<>();
         Poliza pX = new Poliza();
+
         System.out.println("Ingrese el numero de la poliza");
         pX.setNumeroPoliza(leer.nextInt());
         System.out.println("Ingrese la fecha de inicio:");
@@ -100,7 +103,6 @@ public class SeguroService {
 
         System.out.println("Seleccione el vehiculo que desea asociar a la poliza: (numero de motor)");
         for (int i = 0; i < vehiculos.size(); i++) {
-//            System.out.println(vehiculos.get(i).toString());
             //Detalles del vehiculo
             System.out.println("Marca: " + vehiculos.get(i).getMarca());
             System.out.println("Modelo: " + vehiculos.get(i).getModelo());
@@ -116,7 +118,6 @@ public class SeguroService {
         }
         System.out.println("Seleccione el cliente que desea asociar a la poliza: (numero de documento)");
         for (int i = 0; i < clientes.size(); i++) {
-//            System.out.println(clientes.get(i).toString());
             //Detalles del cliente
             System.out.println("Nombre: " + clientes.get(i).getNombre());
             System.out.println("Apellido: " + clientes.get(i).getApellido());
@@ -128,6 +129,11 @@ public class SeguroService {
             if (clientes.get(i).getDocumento() == opcion) {
                 pX.setCliente(clientes.get(i));
                 vehiculos.get(i).setPoliza(pX);
+                vehiculos.get(i).setCliente(clientes.get(i));
+                vehiculosCliente.add(vehiculos.get(i));
+                polizasCliente.add(pX);
+                clientes.get(i).setVehiculoArrayList(vehiculosCliente);
+                clientes.get(i).setPolizaArrayList(polizasCliente);
                 polizas.add(pX);
             }
         }
@@ -165,7 +171,10 @@ public class SeguroService {
                                 + "\nDocumento: " + clientes.get(i).getDocumento()
                                 + "\nDireccion: " + clientes.get(i).getDomicilio()
                                 + "\nTelefono: " + clientes.get(i).getTelefono()
-                                + "\n------------------------------------"
+                );
+                System.out.println(
+                        "Polizas: " + clientes.get(i).getPolizaArrayList()
+                        + "\n------------------------------------"
                 );
             }
         }
@@ -177,18 +186,21 @@ public class SeguroService {
         } else {
             System.out.println("Vehiculos:");
             for (int i = 0; i < vehiculos.size(); i++) {
-                if (vehiculos.get(i).getPoliza() != null) {
+                if (vehiculos.get(i).getPoliza() != null && vehiculos.get(i).getCliente() != null) {
                     System.out.println(
                             "Marca: " + vehiculos.get(i).getMarca()
                                     + "\nModelo: " + vehiculos.get(i).getModelo()
                                     + "\nNumero Motor: " + vehiculos.get(i).getNumeroMotor()
-                                    + "\nPoliza: " + vehiculos.get(i).getPoliza().getNumeroPoliza() + "\n"
+                                    + "\nPoliza: " + vehiculos.get(i).getPoliza().getNumeroPoliza()
+                                    + "\nDueño: " + vehiculos.get(i).getPoliza().getCliente().getNombre()
+                                    + "\n"
                     );
                 } else {
                     System.out.println(
                             "Marca: " + vehiculos.get(i).getMarca()
                                     + "\nModelo: " + vehiculos.get(i).getModelo()
-                                    + "\nNumero Motor: " + vehiculos.get(i).getNumeroMotor() + " / Sin poliza" + "\n"
+                                    + "\nNumero Motor: " + vehiculos.get(i).getNumeroMotor()
+                                    + " Sin Dueño / Sin poliza Asignados!" + "\n"
                     );
                 }
             }

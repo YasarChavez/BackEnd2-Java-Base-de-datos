@@ -1,5 +1,7 @@
 package Guia11Relaciones.Entidades;
 
+import java.util.ArrayList;
+
 public class Cliente {
     /**
      * Nombre y apellido, documento, mail,
@@ -11,7 +13,8 @@ public class Cliente {
     private String mail;
     private String domicilio;
     private String telefono;
-
+    private ArrayList<Vehiculo> vehiculoArrayList = new ArrayList<>();
+    private ArrayList<Poliza> polizaArrayList = new ArrayList<>();
     public Cliente() {
 
     }
@@ -23,6 +26,22 @@ public class Cliente {
         this.mail = mail;
         this.domicilio = domicilio;
         this.telefono = telefono;
+    }
+
+    public ArrayList<Poliza> getPolizaArrayList() {
+        return polizaArrayList;
+    }
+
+    public void setPolizaArrayList(ArrayList<Poliza> polizaArrayList) {
+        this.polizaArrayList = polizaArrayList;
+    }
+
+    public ArrayList<Vehiculo> getVehiculoArrayList() {
+        return vehiculoArrayList;
+    }
+
+    public void setVehiculoArrayList(ArrayList<Vehiculo> vehiculoArrayList) {
+        this.vehiculoArrayList = vehiculoArrayList;
     }
 
     public String getNombre() {
@@ -78,10 +97,12 @@ public class Cliente {
         return "Cliente{" +
                 "nombre='" + nombre + '\'' +
                 ", apellido='" + apellido + '\'' +
-                ", documento='" + documento + '\'' +
+                ", documento=" + documento +
                 ", mail='" + mail + '\'' +
                 ", domicilio='" + domicilio + '\'' +
                 ", telefono='" + telefono + '\'' +
+                ", vehiculoArrayList=" + vehiculoArrayList +
+                ", polizaArrayList=" + polizaArrayList +
                 '}';
     }
 }

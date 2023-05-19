@@ -123,4 +123,11 @@ public class Poliza {
     public void setPagada(boolean pagada) {
         this.pagada = pagada;
     }
+
+    @Override
+    public String toString() {
+        return "Poliza{" +
+                "numeroPoliza=" + numeroPoliza +
+                '}';
+    }
 }
