@@ -24,6 +24,10 @@ public class SeguroService {
         c1.setDomicilio("Av. Siempreviva 123");
         c1.setTelefono("123123");
         c1.setMail("XXXXXXXXXXXXXX");
+        ArrayList<Poliza> polizasCliente123 = new ArrayList<>();
+        c1.setPolizaArrayList(polizasCliente123);
+        ArrayList<Vehiculo> vehiculosCliente123 = new ArrayList<>();
+        c1.setVehiculoArrayList(vehiculosCliente123);
         clientes.add(c1);
 
         Cliente c2 = new Cliente();
@@ -33,8 +37,11 @@ public class SeguroService {
         c2.setDomicilio("Av. Siempreviva 456");
         c2.setTelefono("456123");
         c2.setMail("XXXXXXXXXXXXXX");
+        ArrayList<Poliza> polizasCliente456 = new ArrayList<>();
+        c2.setPolizaArrayList(polizasCliente456);
+        ArrayList<Vehiculo> vehiculosCliente456 = new ArrayList<>();
+        c2.setVehiculoArrayList(vehiculosCliente456);
         clientes.add(c2);
-
         System.out.println("Se Crearon los Clientes");
     }
 
@@ -58,15 +65,11 @@ public class SeguroService {
         v2.setColor("Negro");
         v2.setTipo("Auto");
         vehiculos.add(v2);
-
         System.out.println("Se crearon los vehiculos");
     }
 
     public void crearSeguros() {
-        ArrayList<Vehiculo> vehiculosCliente = new ArrayList<>();
-        ArrayList<Poliza> polizasCliente = new ArrayList<>();
         Poliza pX = new Poliza();
-
         System.out.println("Ingrese el numero de la poliza");
         pX.setNumeroPoliza(leer.nextInt());
         System.out.println("Ingrese la fecha de inicio:");
@@ -130,10 +133,10 @@ public class SeguroService {
                 pX.setCliente(clientes.get(i));
                 vehiculos.get(i).setPoliza(pX);
                 vehiculos.get(i).setCliente(clientes.get(i));
+                ArrayList<Vehiculo> vehiculosCliente = clientes.get(i).getVehiculoArrayList();
                 vehiculosCliente.add(vehiculos.get(i));
+                ArrayList<Poliza> polizasCliente = clientes.get(i).getPolizaArrayList();
                 polizasCliente.add(pX);
-                clientes.get(i).setVehiculoArrayList(vehiculosCliente);
-                clientes.get(i).setPolizaArrayList(polizasCliente);
                 polizas.add(pX);
             }
         }
@@ -174,7 +177,7 @@ public class SeguroService {
                 );
                 System.out.println(
                         "Polizas: " + clientes.get(i).getPolizaArrayList()
-                        + "\n------------------------------------"
+                                + "\n------------------------------------"
                 );
             }
         }

@@ -11,7 +11,7 @@ public class Ejerc03 {
 
         int menu = 0;
         do {
-            System.out.println();
+            System.out.println("--------------------------");
             System.out.println("Elija una opcion: ");
             System.out.println("1. Cargar Clientes");
             System.out.println("2. Cargar Vehiculos");
@@ -21,6 +21,7 @@ public class Ejerc03 {
             System.out.println("6. Mostrar Vehiculos");
             System.out.println("7. Gestion de Cuotas");
             System.out.println("8. Salir");
+            System.out.println("--------------------------");
             menu = leer.nextInt();
             switch (menu) {
                 case 1:

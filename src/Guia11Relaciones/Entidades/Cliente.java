@@ -15,6 +15,7 @@ public class Cliente {
     private String telefono;
     private ArrayList<Vehiculo> vehiculoArrayList = new ArrayList<>();
     private ArrayList<Poliza> polizaArrayList = new ArrayList<>();
+
     public Cliente() {
 
     }
