@@ -3,11 +3,10 @@ package Guia11Relaciones.Servicios;
 import Guia11Relaciones.Entidades.Cliente;
 import Guia11Relaciones.Entidades.Poliza;
 import Guia11Relaciones.Entidades.Vehiculo;
+import Guia11Relaciones.Enums.ApellidosEnum;
+import Guia11Relaciones.Enums.NombresEnum;
 
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-import java.util.Scanner;
+import java.util.*;
 
 public class SeguroService {
     ArrayList<Cliente> clientes = new ArrayList<>();
@@ -17,32 +16,26 @@ public class SeguroService {
     //TODO Agregar vehiculo y poliza a cliente, cliente a vehiculo, poliza a vehiculo
 
     public void cargarClientes() {
+        Random random = new Random();
         Cliente c1 = new Cliente();
-        c1.setNombre("Juan");
-        c1.setApellido("Perez");
-        c1.setDocumento(123);
-        c1.setDomicilio("Av. Siempreviva 123");
-        c1.setTelefono("123123");
+        //Asignar nombre y apellido con enum
+        NombresEnum nombreEnum = NombresEnum.values()[random.nextInt(NombresEnum.values().length)];
+        ApellidosEnum apellidoEnum = ApellidosEnum.values()[random.nextInt(ApellidosEnum.values().length)];
+        c1.setNombre(String.valueOf(nombreEnum));
+        c1.setApellido(String.valueOf(apellidoEnum));
+        double documento = random.nextInt(999999)+100000;
+        double telefono = random.nextInt(999999)+100000;
+        double numCalle = random.nextInt(999)+100;
+        c1.setDocumento(documento);
+        c1.setDomicilio("Av. Siempreviva "+String.valueOf(numCalle));
+        c1.setTelefono(String.valueOf(telefono));
         c1.setMail("XXXXXXXXXXXXXX");
-        ArrayList<Poliza> polizasCliente123 = new ArrayList<>();
-        c1.setPolizaArrayList(polizasCliente123);
-        ArrayList<Vehiculo> vehiculosCliente123 = new ArrayList<>();
-        c1.setVehiculoArrayList(vehiculosCliente123);
+        ArrayList<Poliza> polizasCliente = new ArrayList<>();
+        c1.setPolizaArrayList(polizasCliente);
+        ArrayList<Vehiculo> vehiculosCliente = new ArrayList<>();
+        c1.setVehiculoArrayList(vehiculosCliente);
         clientes.add(c1);
-
-        Cliente c2 = new Cliente();
-        c2.setNombre("Pedro");
-        c2.setApellido("Gomez");
-        c2.setDocumento(456);
-        c2.setDomicilio("Av. Siempreviva 456");
-        c2.setTelefono("456123");
-        c2.setMail("XXXXXXXXXXXXXX");
-        ArrayList<Poliza> polizasCliente456 = new ArrayList<>();
-        c2.setPolizaArrayList(polizasCliente456);
-        ArrayList<Vehiculo> vehiculosCliente456 = new ArrayList<>();
-        c2.setVehiculoArrayList(vehiculosCliente456);
-        clientes.add(c2);
-        System.out.println("Se Crearon los Clientes");
+        System.out.println("Cliente creado");
     }
 
     public void cargarVehiculos() {
@@ -177,6 +170,7 @@ public class SeguroService {
                 );
                 System.out.println(
                         "Polizas: " + clientes.get(i).getPolizaArrayList()
+                                + "\nVehiculos: " + clientes.get(i).getVehiculoArrayList()
                                 + "\n------------------------------------"
                 );
             }

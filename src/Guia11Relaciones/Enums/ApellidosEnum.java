@@ -1,0 +1,5 @@
+package Guia11Relaciones.Enums;
+
+public enum ApellidosEnum {
+    GOMEZ, CHAVEZ, GARCIA, MARTINEZ, GONZALEZ, RAMOS, MORENO, MARTINEZ_GOMEZ, GONZALEZ_GOMEZ, GARCIA_GOMEZ;
+}
