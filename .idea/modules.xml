@@ -3,6 +3,21 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BackEnd2-Java-Base-de-datos.iml" filepath="$PROJECT_DIR$/BackEnd2-Java-Base-de-datos.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Guia10Ejerc01y02/Guia10Ejerc01y02.iml" filepath="$PROJECT_DIR$/Guia10Ejerc01y02/Guia10Ejerc01y02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Guia10Ejerc03/Guia10Ejerc03.iml" filepath="$PROJECT_DIR$/Guia10Ejerc03/Guia10Ejerc03.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Guia10Ejerc04/Guia10Ejerc04.iml" filepath="$PROJECT_DIR$/Guia10Ejerc04/Guia10Ejerc04.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Guia10Ejerc05/Guia10Ejerc05.iml" filepath="$PROJECT_DIR$/Guia10Ejerc05/Guia10Ejerc05.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Guia10Ejerc06/Guia10Ejerc06.iml" filepath="$PROJECT_DIR$/Guia10Ejerc06/Guia10Ejerc06.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Guia10ExEjerc01/Guia10ExEjerc01.iml" filepath="$PROJECT_DIR$/Guia10ExEjerc01/Guia10ExEjerc01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Guia10ExEjerc02/Guia10ExEjerc02.iml" filepath="$PROJECT_DIR$/Guia10ExEjerc02/Guia10ExEjerc02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Guia10ExEjerc03/Guia10ExEjerc03.iml" filepath="$PROJECT_DIR$/Guia10ExEjerc03/Guia10ExEjerc03.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Guia10ExEjerc04/Guia10ExEjerc04.iml" filepath="$PROJECT_DIR$/Guia10ExEjerc04/Guia10ExEjerc04.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Guia10ExEjerc05/Guia10ExEjerc05.iml" filepath="$PROJECT_DIR$/Guia10ExEjerc05/Guia10ExEjerc05.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Guia11Ejerc01/Guia11Ejerc01.iml" filepath="$PROJECT_DIR$/Guia11Ejerc01/Guia11Ejerc01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Guia11Ejerc02/Guia11Ejerc02.iml" filepath="$PROJECT_DIR$/Guia11Ejerc02/Guia11Ejerc02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Guia11Ejerc03/Guia11Ejerc03.iml" filepath="$PROJECT_DIR$/Guia11Ejerc03/Guia11Ejerc03.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Guia11ExEjerc02/Guia11ExEjerc02.iml" filepath="$PROJECT_DIR$/Guia11ExEjerc02/Guia11ExEjerc02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Guia11ExEjerc03/Guia11ExEjerc03.iml" filepath="$PROJECT_DIR$/Guia11ExEjerc03/Guia11ExEjerc03.iml" />
     </modules>
   </component>
 </project>
