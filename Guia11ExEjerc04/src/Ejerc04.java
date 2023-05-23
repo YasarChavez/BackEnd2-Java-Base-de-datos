@@ -6,5 +6,6 @@ public class Ejerc04 {
         simuladorService.crearAlumnos();
         simuladorService.mostrarAlumnos();
         simuladorService.votacion();
+        simuladorService.mostrarVotos();
     }
 }

@@ -36,9 +36,6 @@ public class Voto {
 
     @Override
     public String toString() {
-        return "Voto{" +
-                "alumno=" + alumno +
-                ", alumnosVotados=" + alumnosVotados +
-                '}';
+        return alumno +" votó a:  \n"+ alumnosVotados;
     }
 }

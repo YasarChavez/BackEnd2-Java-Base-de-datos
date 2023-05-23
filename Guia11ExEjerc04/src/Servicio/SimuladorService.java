@@ -46,7 +46,13 @@ public class SimuladorService {
 
     public void crearAlumnos() {
         System.out.println("Cuantos Alumnos desea crear?");
-        int cantidad = leer.nextInt();
+//        int cantidad = leer.nextInt();
+        int cantidad = 4;
+        if (cantidad<4){
+            System.out.println("No puede crear menos de 4 alumnos");
+            System.out.println("Creando 4 alumnos por defecto");
+            cantidad = 4;
+        }
         generarListadoAlumnos(cantidad);
         generarDni(cantidad);
         for (int i = 0; i < nombreMasApellido.size(); i++) {
@@ -78,7 +84,6 @@ public class SimuladorService {
      */
     public void votacion() {
         ArrayList<Alumno> alumnosTemporal = new ArrayList<>(listaAlumnos);
-//        HashSet<Alumno> alumnosVotadosTemp = new HashSet<>();//3
         Random random = new Random();
         for (int i = 0; i < alumnosTemporal.size(); i++) {
             Voto voto = new Voto();
@@ -88,14 +93,11 @@ public class SimuladorService {
                 Alumno alumnoVotado = alumnosTemporal.get(random.nextInt(alumnosTemporal.size()));
                 if (!alumnoVotado.equals(alumno)&& !alumnosVotadosTemp.contains(alumnoVotado)) {
                     voto.setAlumno(alumno);
-                    System.out.println("Alumnos que vota: "+alumno);
+                    System.out.println("Alumnos que vota:\n"+alumno);
                     alumnoVotado.setVotos(alumnoVotado.getVotos() + 1);
                     alumnosVotadosTemp.add(alumnoVotado);
-                    System.out.println("Alumnos votado: "+alumnoVotado);
+                    System.out.println("Alumnos votado:\n"+alumnoVotado);
                     System.out.println();
-//                }
-//                    alumnoVotado.setVotos(alumnoVotado.getVotos() + 1);
-//                    alumnosVotadosTemp.add(alumnoVotado);
                 }else{
                     j--;
                 }
@@ -104,13 +106,12 @@ public class SimuladorService {
             voto.setListaAlumnos(alumnosVotados);
             listaVotos.add(voto);
         }
-        System.out.println("Alumnos Votados...\n");
-        for (Alumno alumno : listaAlumnos) {
-            System.out.println(alumno);
-        }
-        System.out.println("Votos de cada alumno");
+    }
+    public void mostrarVotos(){
+        System.out.println("Lista de Votos:\n");
         for (Voto voto : listaVotos) {
             System.out.println(voto);
+            System.out.println();
         }
     }
 }
