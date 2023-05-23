@@ -8,14 +8,14 @@ import java.util.ArrayList;
  */
 public class Voto {
     private Alumno alumno;
-    private ArrayList<Alumno> listaAlumnos;
+    private ArrayList<Alumno> alumnosVotados;
 
     public Voto() {
     }
 
-    public Voto(Alumno alumno, ArrayList<Alumno> listaAlumnos) {
+    public Voto(Alumno alumno, ArrayList<Alumno> alumnosVotados) {
         this.alumno = alumno;
-        this.listaAlumnos = listaAlumnos;
+        this.alumnosVotados = alumnosVotados;
     }
 
     public Alumno getAlumno() {
@@ -27,18 +27,18 @@ public class Voto {
     }
 
     public ArrayList<Alumno> getListaAlumnos() {
-        return listaAlumnos;
+        return alumnosVotados;
     }
 
-    public void setListaAlumnos(ArrayList<Alumno> listaAlumnos) {
-        this.listaAlumnos = listaAlumnos;
+    public void setListaAlumnos(ArrayList<Alumno> alumnosVotados) {
+        this.alumnosVotados = alumnosVotados;
     }
 
     @Override
     public String toString() {
         return "Voto{" +
                 "alumno=" + alumno +
-                ", listaAlumnos=" + listaAlumnos +
+                ", alumnosVotados=" + alumnosVotados +
                 '}';
     }
 }

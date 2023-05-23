@@ -1,7 +1,7 @@
 package Entidad;
 
 /**
- *nombre completo, DNI y cantidad de votos.
+ * nombre completo, DNI y cantidad de votos.
  */
 public class Alumno {
     private String nombreCompleto;
