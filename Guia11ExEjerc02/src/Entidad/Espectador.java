@@ -9,6 +9,9 @@ public class Espectador {
     private int edad;
     private double dineroDisponible;
 
+    public Espectador() {
+    }
+
     public Espectador(String nombre, int edad, double dineroDisponible) {
         this.nombre = nombre;
         this.edad = edad;

@@ -1,6 +1,7 @@
 package Servicio;
 
 import Entidad.*;
+import Enums.NombresEnum;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -27,6 +28,14 @@ public class CineService {
     public Cine crearCine(Pelicula pelicula, SalaCine salaCine, double precio) {
         Cine cineX = new Cine(pelicula, salaCine, precio);
         return cineX;
+    }
+    public Espectador crearEspectadores(){
+        Random random = new Random();
+        Espectador espectadorObj = new Espectador();
+        espectadorObj.setNombre(NombresEnum.values()[random.nextInt(NombresEnum.values().length)].name());
+        espectadorObj.setEdad(random.nextInt(99)+18);
+        espectadorObj.setDineroDisponible(random.nextInt(3000)+400);
+        return espectadorObj;
     }
 
     public SalaCine crearSalaCine() {

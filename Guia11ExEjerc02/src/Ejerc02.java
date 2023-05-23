@@ -12,14 +12,10 @@ public class Ejerc02 {
         CineService cineService = new CineService();
         SalaCine salaCine = cineService.crearSalaCine();
         ArrayList<Espectador> espectadores = new ArrayList<>();
-        Espectador espectador1 = new Espectador("Juanito", 25, 500.0);
-        espectadores.add(espectador1);
-        Espectador espectador2 = new Espectador("Pepito", 30, 450.0);
-        espectadores.add(espectador2);
-        Espectador espectador3 = new Espectador("Pepa", 35, 300.0);
-        espectadores.add(espectador3);
-        Espectador espectador4 = new Espectador("Pepita", 17, 600.0);
-        espectadores.add(espectador4);
+
+        for (int i = 0; i < 10; i++) {
+            espectadores.add(cineService.crearEspectadores());
+        }
 
         System.out.println("Ingrese el precio de las peliculas:");
         double precio = leer.nextDouble();
