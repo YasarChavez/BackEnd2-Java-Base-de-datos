@@ -30,6 +30,7 @@ public class CineService {
     }
 
     public SalaCine crearSalaCine() {
+
         SalaCine salaX = new SalaCine(asientos, filas, columnas);
         //Asignar valores a los asientos
         for (int i = 0; i < asientos.length; i++) {
@@ -69,7 +70,6 @@ public class CineService {
         if (!dineroSuficiente) {
             System.out.println("Espectador no cuenta con dinero suficiente");
         }
-
         if (mayorEdad && dineroSuficiente) {
             boolean ubicado = false;
             do {
@@ -79,10 +79,11 @@ public class CineService {
                 System.out.println("Ingrese la columna de la Butaca (A/1 B/2 C/3 D/4 E/5 F/6)");
                 String columna = leer.next();
                 int columnas = Integer.parseInt(columna) - 1;
-                //Validar Entidad.Butaca disponible
+                //Validar Butaca disponible
                 if (asientos[filas][columnas].getEstado().equals(" ")) {
                     asientos[filas][columnas].setEstado("X");
                     System.out.println("Se ha vendido la Butaca");
+                    espectador.setDineroDisponible(espectador.getDineroDisponible() - cine.getPrecio());
                     ubicado = true;
                 } else {
                     System.out.println("Butaca no disponible");

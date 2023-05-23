@@ -6,8 +6,6 @@ import Enums.ApellidosEnum;
 import Enums.NombresEnum;
 
 import java.util.*;
-import java.util.Collections;
-import java.util.Comparator;
 
 public class SimuladorService {
     /**
@@ -50,7 +48,7 @@ public class SimuladorService {
         System.out.println("Cuantos Alumnos desea crear?");
         int cantidad = leer.nextInt();
 //        int cantidad = 12;
-        if (cantidad<11){
+        if (cantidad < 11) {
             System.out.println("No puede crear menos de 11 alumnos");
             System.out.println("Creando 11 alumnos por defecto");
             cantidad = 11;
@@ -95,14 +93,14 @@ public class SimuladorService {
             Alumno alumno = alumnosTemporal.get(i);
             for (int j = 0; j < 3; j++) {
                 Alumno alumnoVotado = alumnosTemporal.get(random.nextInt(alumnosTemporal.size()));
-                if (!alumnoVotado.equals(alumno)&& !alumnosVotadosTemp.contains(alumnoVotado)) {
+                if (!alumnoVotado.equals(alumno) && !alumnosVotadosTemp.contains(alumnoVotado)) {
                     voto.setAlumno(alumno);
 //                    System.out.println("Alumnos que vota:\n"+alumno);
                     alumnoVotado.setVotos(alumnoVotado.getVotos() + 1);
                     alumnosVotadosTemp.add(alumnoVotado);
 //                    System.out.println("Alumnos votado:\n"+alumnoVotado);
 //                    System.out.println();
-                }else{
+                } else {
                     j--;
                 }
             }
@@ -112,46 +110,50 @@ public class SimuladorService {
         }
         System.out.println("Todos los alumnos votaron...\n");
     }
-    public void mostrarVotos(){
+
+    public void mostrarVotos() {
         System.out.println("Lista de Votos:\n");
         for (Voto voto : listaVotos) {
             System.out.println(voto);
             System.out.println();
         }
     }
+
     /**
      * Se debe crear un método que haga el recuento de votos, este recibe la lista de Alumnos y
      * comienza a hacer el recuento de votos.
      */
-    public void recuentoVotos(){
+    public void recuentoVotos() {
         System.out.println("Recuento de votos:\n");
         for (Alumno alumno : listaAlumnos) {
-            System.out.println("Alumno: "+alumno.getNombreCompleto()+"\nVotos: "+alumno.getVotos());
+            System.out.println("Alumno: " + alumno.getNombreCompleto() + "\nVotos: " + alumno.getVotos());
         }
     }
+
     /**
      * Se deben crear 5 facilitadores con los 5 primeros alumnos votados y se deben crear 5
      * facilitadores suplentes con los 5 segundos alumnos más votados. A continuación, mostrar
      * los 5 facilitadores y los 5 facilitadores suplentes.
      */
-    public void crearFacilitadores(){
+    public void crearFacilitadores() {
         ArrayList<Alumno> facilitadores = new ArrayList<>(listaAlumnos);
         Comparator comparator = Comparator.comparing(Alumno::getVotos);
         Collections.sort(facilitadores, comparator.reversed());
         System.out.println("Facilitadores y Facilitadores Suplentes:\n");
         for (int i = 0; i < 5; i++) {
-            System.out.println("Facilitador: "+facilitadores.get(i));
+            System.out.println("Facilitador: " + facilitadores.get(i));
         }
         System.out.println();
         for (int i = 5; i < 10; i++) {
-            System.out.println("Facilitador Suplente: "+facilitadores.get(i));
+            System.out.println("Facilitador Suplente: " + facilitadores.get(i));
         }
         System.out.println();
 
     }
-    public void menu(){
+
+    public void menu() {
         int opcion = 0;
-        while (opcion != 7){
+        while (opcion != 7) {
             System.out.println("--------------------");
             System.out.println("1. Crear Alumnos");
             System.out.println("2. Votar");
@@ -162,7 +164,8 @@ public class SimuladorService {
             System.out.println("7. Salir");
             System.out.println("Ingrese una opcion: ");
             opcion = leer.nextInt();
-            switch (opcion){
+            System.out.println("--------------------");
+            switch (opcion) {
                 case 1:
                     crearAlumnos();
                     break;
