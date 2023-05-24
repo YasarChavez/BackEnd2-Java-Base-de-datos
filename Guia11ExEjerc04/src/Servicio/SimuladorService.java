@@ -26,7 +26,6 @@ public class SimuladorService {
             nombreMasApellido.add(NombresEnum.values()[random.nextInt(NombresEnum.values().length)].name()
                     + " " + ApellidosEnum.values()[random.nextInt(ApellidosEnum.values().length)]);
         }
-//        System.out.println("Alumnos Generados...\n");
     }
 
 
@@ -47,7 +46,6 @@ public class SimuladorService {
     public void crearAlumnos() {
         System.out.println("Cuantos Alumnos desea crear?");
         int cantidad = leer.nextInt();
-//        int cantidad = 12;
         if (cantidad < 11) {
             System.out.println("No puede crear menos de 11 alumnos");
             System.out.println("Creando 11 alumnos por defecto");
@@ -95,11 +93,8 @@ public class SimuladorService {
                 Alumno alumnoVotado = alumnosTemporal.get(random.nextInt(alumnosTemporal.size()));
                 if (!alumnoVotado.equals(alumno) && !alumnosVotadosTemp.contains(alumnoVotado)) {
                     voto.setAlumno(alumno);
-//                    System.out.println("Alumnos que vota:\n"+alumno);
                     alumnoVotado.setVotos(alumnoVotado.getVotos() + 1);
                     alumnosVotadosTemp.add(alumnoVotado);
-//                    System.out.println("Alumnos votado:\n"+alumnoVotado);
-//                    System.out.println();
                 } else {
                     j--;
                 }
