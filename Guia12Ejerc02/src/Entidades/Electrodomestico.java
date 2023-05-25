@@ -10,11 +10,11 @@ import java.util.Scanner;
  * • Un constructor con todos los atributos pasados por parámetro.
  */
 public class Electrodomestico {
-    Scanner leer = new Scanner(System.in).useDelimiter("\n");
     protected Double precio;
     protected String color;
     protected Character consumoEnergetico;
     protected Double peso;
+    Scanner leer = new Scanner(System.in).useDelimiter("\n");
 
     public Electrodomestico() {
     }
@@ -57,11 +57,7 @@ public class Electrodomestico {
     public void setPeso(Double peso) {
         this.peso = peso;
     }
-    /**
-     * Método comprobarConsumoEnergetico(char letra): comprueba que la letra es correcta,
-     * sino es correcta usara la letra F por defecto. Este método se debe invocar al crear el
-     * objeto y no será visible.
-     */
+
     public void comprobarConsumoEnergetico(char letra) {
         if (letra >= 'A' && letra <= 'F') {
             this.consumoEnergetico = letra;
@@ -69,12 +65,7 @@ public class Electrodomestico {
             this.consumoEnergetico = 'F';
         }
     }
-    /**
-     * Método comprobarColor(String color): comprueba que el color es correcto, y si no lo es,
-     * usa el color blanco por defecto. Los colores disponibles para los electrodomésticos son
-     * blanco, negro, rojo, azul y gris. No importa si el nombre está en mayúsculas o en
-     * minúsculas. Este método se invocará al crear el objeto y no será visible.
-     */
+
     public void comprobarColor(String color) {
         if (color.equalsIgnoreCase("blanco") ||
                 color.equalsIgnoreCase("negro") ||
@@ -86,14 +77,8 @@ public class Electrodomestico {
             this.color = "blanco";
         }
     }
-    /**
-     * Metodo crearElectrodomestico(): le pide la información al usuario y llena el
-     * electrodoméstico, también llama los métodos para comprobar el color y el consumo. Al
-     * precio se le da un valor base de $1000.
-     */
+
     public void crearElectrodomestico() {
-//        System.out.println("Ingrese el precio del electrodomestico");
-//        this.precio = leer.nextDouble();
         this.precio = 1000.0;
 
         System.out.println("Ingrese el color del electrodomestico");
@@ -106,25 +91,8 @@ public class Electrodomestico {
 
         System.out.println("Ingrese el peso del electrodomestico");
         this.peso = leer.nextDouble();
-        precioFinal();
     }
-    /**
-     * Método precioFinal(): según el consumo energético y su tamaño, aumentará el valor del
-     * precio. Esta es la lista de precios:
-     * LETRA PRECIO
-     * A $1000
-     * B $800
-     * C $600
-     * D $500
-     * E $300
-     * F $100
-     *
-     * PESO PRECIO
-     * Entre 1 y 19 kg $100
-     * Entre 20 y 49 kg $500
-     * Entre 50 y 79 kg $800
-     * Mayor que 80 kg $1000
-     */
+
     public void precioFinal() {
         switch (consumoEnergetico) {
             case 'A':
