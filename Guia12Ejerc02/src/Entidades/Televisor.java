@@ -47,4 +47,16 @@ public class Televisor extends Electrodomestico {
             precio += 500;
         }
     }
+
+    @Override
+    public String toString() {
+        return "Televisor{" +
+                "pulgadas=" + pulgadas +
+                ", tdt=" + tdt +
+                ", precio=" + precio +
+                ", color='" + color + '\'' +
+                ", consumoEnergetico=" + consumoEnergetico +
+                ", peso=" + peso +
+                '}';
+    }
 }
