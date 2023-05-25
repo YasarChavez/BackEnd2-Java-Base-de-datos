@@ -33,6 +33,7 @@ public class Lavadora extends Electrodomestico {
         this.carga = leer.nextInt();
         precioFinal();
     }
+
     /**
      * Método precioFinal(): este método será heredado y se le sumará la siguiente
      * funcionalidad. Si tiene una carga mayor de 30 kg, aumentará el precio en $500, si la
@@ -46,6 +47,7 @@ public class Lavadora extends Electrodomestico {
             precio += 500;
         }
     }
+
     @Override
     public String toString() {
         return "Lavadora{" +

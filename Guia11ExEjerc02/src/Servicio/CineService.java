@@ -29,12 +29,13 @@ public class CineService {
         Cine cineX = new Cine(pelicula, salaCine, precio);
         return cineX;
     }
-    public Espectador crearEspectadores(){
+
+    public Espectador crearEspectadores() {
         Random random = new Random();
         Espectador espectadorObj = new Espectador();
         espectadorObj.setNombre(NombresEnum.values()[random.nextInt(NombresEnum.values().length)].name());
-        espectadorObj.setEdad(random.nextInt(99)+18);
-        espectadorObj.setDineroDisponible(random.nextInt(3000)+400);
+        espectadorObj.setEdad(random.nextInt(99) + 18);
+        espectadorObj.setDineroDisponible(random.nextInt(3000) + 400);
         return espectadorObj;
     }
 
