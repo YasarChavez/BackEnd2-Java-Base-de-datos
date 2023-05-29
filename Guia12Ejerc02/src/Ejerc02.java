@@ -43,7 +43,5 @@ public class Ejerc02 {
         System.out.println(totales1);
         System.out.println(totales2);
         System.out.println("Total: "+(lavadoras+televisores));
-        //
-
     }
 }
