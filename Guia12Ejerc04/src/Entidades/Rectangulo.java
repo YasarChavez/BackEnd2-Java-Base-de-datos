@@ -50,13 +50,13 @@ public class Rectangulo implements calculosFormas {
 
     @Override
     public double calcularArea() {
-        this.area = base*altura;
+        this.area = base * altura;
         return area;
     }
 
     @Override
     public double calcularPerimetro() {
-        this.perimetro = (base*2)+(altura*2);
+        this.perimetro = (base * 2) + (altura * 2);
         return perimetro;
     }
 }

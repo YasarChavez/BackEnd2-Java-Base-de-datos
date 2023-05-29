@@ -28,13 +28,14 @@ public class Ejerc02 {
         double lavadoras = 0;
         double televisores = 0;
         for (Electrodomestico electrodomesticoobj : electrodomesticoArrayList) {
+            //NO BORRAR
             electrodomesticoobj.precioFinal();
             if (electrodomesticoobj instanceof Lavadora) {
-                System.out.println("Lavadora: "+ electrodomesticoobj.getPrecio());
+                System.out.println("Lavadora: " + electrodomesticoobj.getPrecio());
                 lavadoras += electrodomesticoobj.getPrecio();
             }
             if (electrodomesticoobj instanceof Televisor) {
-                System.out.println("Televisor: "+electrodomesticoobj.getPrecio());
+                System.out.println("Televisor: " + electrodomesticoobj.getPrecio());
                 televisores += electrodomesticoobj.getPrecio();
             }
         }
@@ -42,6 +43,6 @@ public class Ejerc02 {
         String totales2 = String.format("Total televisores: %.2f", televisores);
         System.out.println(totales1);
         System.out.println(totales2);
-        System.out.println("Total: "+(lavadoras+televisores));
+        System.out.println("Total: " + (lavadoras + televisores));
     }
 }
