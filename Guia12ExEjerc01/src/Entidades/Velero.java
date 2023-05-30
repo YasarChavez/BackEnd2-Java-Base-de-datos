@@ -20,13 +20,14 @@ public class Velero extends Barco{
         this.numMastiles = numMastiles;
     }
 
+
     @Override
     public void totalAlquiler() {
         long fechaA = alquiler.getFechaAlquiler().getTimeInMillis();
         long fechaD = alquiler.getFechaDevolucion().getTimeInMillis();
         long diferencia = fechaD-fechaA;
         int dias = (int)(diferencia/(1000*60*60*24));
-        System.out.println(dias*(eslora+numMastiles));
+        System.out.println(dias*(eslora+numMastiles)*10);
     }
 
     @Override
