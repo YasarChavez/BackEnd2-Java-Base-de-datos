@@ -66,7 +66,7 @@ public class Barco {
         long fechaD = alquiler.getFechaDevolucion().getTimeInMillis();
         long diferencia = fechaD-fechaA;
         int dias = (int)(diferencia/(1000*60*60*24));
-        System.out.println(dias*eslora);
+        System.out.println((dias*eslora)*10);
     }
 
 

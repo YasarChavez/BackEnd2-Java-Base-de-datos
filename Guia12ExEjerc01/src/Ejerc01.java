@@ -37,5 +37,6 @@ public class Ejerc01 {
                 aux.totalAlquiler();
             }
         }
+        //DONE
     }
 }
