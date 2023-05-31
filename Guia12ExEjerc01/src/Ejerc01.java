@@ -1,4 +1,5 @@
 import Entidades.*;
+import Servicios.AlquilerServicios;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -6,6 +7,7 @@ import java.util.Scanner;
 public class Ejerc01 {
     public static void main(String[] args) {
         Scanner leer = new Scanner(System.in).useDelimiter("\n");
+        AlquilerServicios alquilerServicios = new AlquilerServicios();
 
         ArrayList<Barco> barcoArrayList = new ArrayList<>();
 
@@ -37,6 +39,7 @@ public class Ejerc01 {
                 aux.totalAlquiler();
             }
         }
+        alquilerServicios.mostrarAlquileres(veleroObj);
         //DONE
     }
 }

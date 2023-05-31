@@ -1,7 +1,5 @@
 package Entidades;
 
-import java.util.Calendar;
-import java.util.GregorianCalendar;
 import java.util.Scanner;
 
 public class Barco {
@@ -61,14 +59,13 @@ public class Barco {
         this.leer = leer;
     }
 
-    public void totalAlquiler(){
+    public void totalAlquiler() {
         long fechaA = alquiler.getFechaAlquiler().getTimeInMillis();
         long fechaD = alquiler.getFechaDevolucion().getTimeInMillis();
-        long diferencia = fechaD-fechaA;
-        int dias = (int)(diferencia/(1000*60*60*24));
-        System.out.println((dias*eslora)*10);
+        long diferencia = fechaD - fechaA;
+        int dias = (int) (diferencia / (1000 * 60 * 60 * 24));
+        System.out.println("Total Alquiler: " + (dias * eslora) * 10);
     }
-
 
 
     @Override

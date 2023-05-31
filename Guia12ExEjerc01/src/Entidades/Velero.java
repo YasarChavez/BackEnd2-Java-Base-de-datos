@@ -1,6 +1,6 @@
 package Entidades;
 
-public class Velero extends Barco{
+public class Velero extends Barco {
     private int numMastiles;
 
     public Velero() {
@@ -25,9 +25,9 @@ public class Velero extends Barco{
     public void totalAlquiler() {
         long fechaA = alquiler.getFechaAlquiler().getTimeInMillis();
         long fechaD = alquiler.getFechaDevolucion().getTimeInMillis();
-        long diferencia = fechaD-fechaA;
-        int dias = (int)(diferencia/(1000*60*60*24));
-        System.out.println(dias*(eslora+numMastiles)*10);
+        long diferencia = fechaD - fechaA;
+        int dias = (int) (diferencia / (1000 * 60 * 60 * 24));
+        System.out.println("Total Alquiler: " + (dias * (eslora + numMastiles) * 10));
     }
 
     @Override
@@ -37,7 +37,6 @@ public class Velero extends Barco{
                 ", matricula='" + matricula + '\'' +
                 ", eslora=" + eslora +
                 ", anioFabricacion=" + anioFabricacion +
-                ", alquiler=" + alquiler +
                 '}';
     }
 }

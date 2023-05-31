@@ -5,6 +5,7 @@ import java.util.GregorianCalendar;
 import java.util.Scanner;
 
 public class Alquiler {
+    Scanner leer = new Scanner(System.in).useDelimiter("\n");
     //Alquiler se guarda: el
     //nombre, documento del cliente, la fecha de alquiler, fecha de devolución, la posición del
     //amarre y el barco que lo ocupará.
@@ -14,8 +15,6 @@ public class Alquiler {
     private Calendar fechaDevolucion;
     private String posAmarre;
     private Barco barco;
-
-    Scanner leer = new Scanner(System.in).useDelimiter("\n");
 
     public Alquiler() {
     }
@@ -95,19 +94,7 @@ public class Alquiler {
         System.out.println("Ingrese la Posicion del Amarre:");
         this.posAmarre = leer.next();
         this.barco = barco;
-        return new Alquiler(nombre,documento,fechaAlquiler,fechaDevolucion,posAmarre,barco);
-    }
-
-    @Override
-    public String toString() {
-        return "Alquiler{" +
-                "nombre='" + nombre + '\'' +
-                ", documento='" + documento + '\'' +
-                ", fechaAlquiler=" + fechaAlquiler +
-                ", fechaDevolucion=" + fechaDevolucion +
-                ", posAmarre='" + posAmarre + '\'' +
-                ", barco=" + barco +
-                '}';
+        return new Alquiler(nombre, documento, fechaAlquiler, fechaDevolucion, posAmarre, barco);
     }
 
 }
