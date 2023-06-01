@@ -1,6 +1,6 @@
 package Entidades;
 
-public class Polideportivo extends Edificio{
+public class Polideportivo extends Edificio {
     private boolean techado;
 
 
@@ -23,11 +23,11 @@ public class Polideportivo extends Edificio{
 
     @Override
     public void calcularSuperficie() {
-        System.out.println("Superficie: "+ancho*alto);
+        System.out.println("Superficie: " + ancho * alto);
     }
 
     @Override
     public void calcularVolumen() {
-        System.out.println("Volumen: "+alto*alto*largo);
+        System.out.println("Volumen: " + alto * alto * largo);
     }
 }

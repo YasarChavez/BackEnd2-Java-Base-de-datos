@@ -24,6 +24,7 @@ public class BarcosaMotor extends Barco {
         long fechaA = alquiler.getFechaAlquiler().getTimeInMillis();
         long fechaD = alquiler.getFechaDevolucion().getTimeInMillis();
         long diferencia = fechaD - fechaA;
+//        long diferencia = alquiler.getFechaDevolucion().getTimeInMillis() - alquiler.getFechaAlquiler().getTimeInMillis();
         int dias = (int) (diferencia / (1000 * 60 * 60 * 24));
         System.out.println("Total Alquiler: " + (dias * (eslora + potenciaCV) * 10));
     }

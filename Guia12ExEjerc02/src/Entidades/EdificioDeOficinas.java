@@ -1,6 +1,6 @@
 package Entidades;
 
-public class EdificioDeOficinas extends Edificio{
+public class EdificioDeOficinas extends Edificio {
 
     private int numOficinas;
     private int cantPersonasOficina;
@@ -42,15 +42,16 @@ public class EdificioDeOficinas extends Edificio{
 
     @Override
     public void calcularSuperficie() {
-        System.out.println("Superficie: "+ancho*alto);
+        System.out.println("Superficie: " + ancho * alto);
     }
 
     @Override
     public void calcularVolumen() {
-        System.out.println("Volumen: "+alto*alto*largo);
+        System.out.println("Volumen: " + alto * alto * largo);
     }
-    public void cantPersonas(){
-        System.out.println("Cantidad de personas por Piso: "+cantPersonasOficina*numOficinas);
-        System.out.println("Cantidad de personas por Edificio: "+cantPersonasOficina*numOficinas*numPisos);
+
+    public void cantPersonas() {
+        System.out.println("Cantidad de personas por Piso: " + cantPersonasOficina * numOficinas);
+        System.out.println("Cantidad de personas por Edificio: " + cantPersonasOficina * numOficinas * numPisos);
     }
 }
