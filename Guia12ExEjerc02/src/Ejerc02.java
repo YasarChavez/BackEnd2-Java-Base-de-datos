@@ -36,6 +36,6 @@ public class Ejerc02 {
                 ((EdificioDeOficinas) aux).cantPersonas();
             }
         }
-
+        //DONE
     }
 }
