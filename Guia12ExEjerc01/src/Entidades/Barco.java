@@ -1,6 +1,7 @@
 package Entidades;
 
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 public class Barco {
     //su matrícula, su eslora en metros y año de fabricación.
@@ -60,10 +61,12 @@ public class Barco {
     }
 
     public void totalAlquiler() {
-        long fechaA = alquiler.getFechaAlquiler().getTimeInMillis();
-        long fechaD = alquiler.getFechaDevolucion().getTimeInMillis();
-        long diferencia = fechaD - fechaA;
-        int dias = (int) (diferencia / (1000 * 60 * 60 * 24));
+//        long fechaA = alquiler.getFechaAlquiler().getTimeInMillis();
+//        long fechaD = alquiler.getFechaDevolucion().getTimeInMillis();
+//        long diferencia = fechaD - fechaA;
+//        int dias = (int) (diferencia / (1000 * 60 * 60 * 24));
+        long diferencia = alquiler.getFechaDevolucion().getTimeInMillis()-alquiler.getFechaAlquiler().getTimeInMillis();
+        long dias = TimeUnit.DAYS.convert(diferencia,TimeUnit.MILLISECONDS);
         System.out.println("Total Alquiler: " + (dias * eslora) * 10);
     }
 

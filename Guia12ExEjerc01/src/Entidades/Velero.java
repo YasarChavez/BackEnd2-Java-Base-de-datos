@@ -1,5 +1,7 @@
 package Entidades;
 
+import java.util.concurrent.TimeUnit;
+
 public class Velero extends Barco {
     private int numMastiles;
 
@@ -23,10 +25,8 @@ public class Velero extends Barco {
 
     @Override
     public void totalAlquiler() {
-        long fechaA = alquiler.getFechaAlquiler().getTimeInMillis();
-        long fechaD = alquiler.getFechaDevolucion().getTimeInMillis();
-        long diferencia = fechaD - fechaA;
-        int dias = (int) (diferencia / (1000 * 60 * 60 * 24));
+        long diferencia = alquiler.getFechaDevolucion().getTimeInMillis()-alquiler.getFechaAlquiler().getTimeInMillis();
+        long dias = TimeUnit.DAYS.convert(diferencia,TimeUnit.MILLISECONDS);
         System.out.println("Total Alquiler: " + (dias * (eslora + numMastiles) * 10));
     }
 
