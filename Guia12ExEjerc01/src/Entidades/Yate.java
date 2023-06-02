@@ -1,5 +1,7 @@
 package Entidades;
 
+import java.util.Calendar;
+
 public class Yate extends Barco {
     private int potenciaCV;
     private int numCamarotes;

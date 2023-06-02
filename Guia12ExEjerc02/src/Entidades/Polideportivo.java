@@ -23,11 +23,11 @@ public class Polideportivo extends Edificio {
 
     @Override
     public void calcularSuperficie() {
-        System.out.println("Superficie: " + ancho * alto);
+        System.out.println("Superficie: " + ancho * largo);
     }
 
     @Override
     public void calcularVolumen() {
-        System.out.println("Volumen: " + alto * alto * largo);
+        System.out.println("Volumen: " + alto * ancho * largo);
     }
 }
