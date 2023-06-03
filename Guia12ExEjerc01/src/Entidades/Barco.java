@@ -65,8 +65,8 @@ public class Barco {
 //        long fechaD = alquiler.getFechaDevolucion().getTimeInMillis();
 //        long diferencia = fechaD - fechaA;
 //        int dias = (int) (diferencia / (1000 * 60 * 60 * 24));
-        long diferencia = alquiler.getFechaDevolucion().getTimeInMillis()-alquiler.getFechaAlquiler().getTimeInMillis();
-        long dias = TimeUnit.DAYS.convert(diferencia,TimeUnit.MILLISECONDS);
+        long diferencia = alquiler.getFechaDevolucion().getTimeInMillis() - alquiler.getFechaAlquiler().getTimeInMillis();
+        long dias = TimeUnit.DAYS.convert(diferencia, TimeUnit.MILLISECONDS);
         System.out.println("Total Alquiler: " + (dias * eslora) * 10);
     }
 

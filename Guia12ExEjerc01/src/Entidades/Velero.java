@@ -25,8 +25,8 @@ public class Velero extends Barco {
 
     @Override
     public void totalAlquiler() {
-        long diferencia = alquiler.getFechaDevolucion().getTimeInMillis()-alquiler.getFechaAlquiler().getTimeInMillis();
-        long dias = TimeUnit.DAYS.convert(diferencia,TimeUnit.MILLISECONDS);
+        long diferencia = alquiler.getFechaDevolucion().getTimeInMillis() - alquiler.getFechaAlquiler().getTimeInMillis();
+        long dias = TimeUnit.DAYS.convert(diferencia, TimeUnit.MILLISECONDS);
         System.out.println("Total Alquiler: " + (dias * (eslora + numMastiles) * 10));
     }
 
