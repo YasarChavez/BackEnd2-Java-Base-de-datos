@@ -60,7 +60,8 @@ public class Camping extends Alojamiento {
                 ", gerente='" + gerente + '\'' +
                 '}';
     }
-    public Camping crearCamping(){
+
+    public Camping crearCamping() {
         System.out.println("Ingrese el nombre del alojamiento");
         this.nombre = leer.next();
         System.out.println("Ingrese la dirección del alojamiento");

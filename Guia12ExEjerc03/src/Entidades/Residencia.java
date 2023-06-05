@@ -61,7 +61,8 @@ public class Residencia extends Alojamiento {
                 ", gerente='" + gerente + '\'' +
                 '}';
     }
-    public Residencia crearResidencia(){
+
+    public Residencia crearResidencia() {
         System.out.println("Ingrese el nombre de la residencia");
         this.nombre = leer.next();
         System.out.println("Ingrese la direccion de la residencia");
