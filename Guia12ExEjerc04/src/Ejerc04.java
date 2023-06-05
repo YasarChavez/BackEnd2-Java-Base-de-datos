@@ -23,7 +23,6 @@ public class Ejerc04 {
         for (Persona personas : personaArrayList) {
             System.out.println(personas);
         }
-
-
     }
 }
+
