@@ -13,8 +13,7 @@ public class SeguroService {
     ArrayList<Vehiculo> vehiculos = new ArrayList<>();
     ArrayList<Poliza> polizas = new ArrayList<>();
     Scanner leer = new Scanner(System.in).useDelimiter("\n");
-    //TODO Agregar vehiculo y poliza a cliente, cliente a vehiculo, poliza a vehiculo
-
+    //TODO : Cargar clientes y vehiculos
     public void cargarClientes() {
         Random random = new Random();
         Cliente c1 = new Cliente();
