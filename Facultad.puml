@@ -1,0 +1,59 @@
+@startuml
+class Entidad.Estudiante {
+# String curso
++ String getCurso()
++ void setCurso(String)
++ void matricular()
++ String toString()
+}
+class Entidad.PersonalDeServicio {
+# String seccion
++ String getSeccion()
++ void setSeccion(String)
++ void trasladarSeccion()
++ String toString()
+}
+class Entidad.Persona {
+# String nombre
+# String apellidos
+# int identificacion
+# String estadoCivil
+~ Scanner leer
++ String getNombre()
++ void setNombre(String)
++ String getApellidos()
++ void setApellidos(String)
++ int getIdentificacion()
++ void setIdentificacion(int)
++ String getEstadoCivil()
++ void setEstadoCivil(String)
++ void cambiarEstadoCivil()
++ String toString()
+}
+class Entidad.Empleados {
+# int anioIncorp
+# int numDespacho
++ int getAnioIncorp()
++ void setAnioIncorp(int)
++ int getNumDespacho()
++ void setNumDespacho(int)
++ void reasignarDespacho()
++ String toString()
+}
+class Entidad.Profesores {
+# String departamento
++ String getDepartamento()
++ void setDepartamento(String)
++ void cambioDeDepartamento()
++ String toString()
+}
+class Ejerc04 {
++ {static} void main(String[])
+}
+
+
+Entidad.Persona <|-- Entidad.Estudiante
+Entidad.Empleados <|-- Entidad.PersonalDeServicio
+Entidad.Persona <|-- Entidad.Empleados
+Entidad.Empleados <|-- Entidad.Profesores
+@enduml
