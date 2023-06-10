@@ -9,5 +9,6 @@ public class Main {
         Armadura armadura = new Armadura();
         armadura.getRadar().mostrarObjetos();
 
+
     }
 }
