@@ -88,4 +88,16 @@ public class Objeto {
         int ene = random.nextInt(2)+1;
         return ene == 1;
     }
+
+    @Override
+    public String toString() {
+        return "Objeto{" +
+                "resistencia=" + resistencia +
+                ", enemigo=" + enemigo +
+                ", posX=" + posX +
+                ", posY=" + posY +
+                ", posZ=" + posZ +
+                ", dinstancia=" + dinstancia +
+                '}';
+    }
 }
