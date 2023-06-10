@@ -73,6 +73,12 @@ public class Armadura {
         int tiempoVuelo = random.nextInt(10)+1;
         System.out.println("Volando por "+tiempoVuelo+" segundo/s.");
         reactor.setCargaReactor(reactor.getCargaReactor()-((botas.getConsumo()*3*tiempoVuelo)+guantes.getConsumo()*2*tiempoVuelo));
-
+    }
+    public void atacar(){
+        //Al utilizar los guantes como armas el consumo se triplica durante el tiempo del disparo.
+        Random random = new Random();
+        int tiempoDisparo = random.nextInt(10)+1;
+        System.out.println("Disparando por "+tiempoDisparo+" segundo/s.");
+        reactor.setCargaReactor(reactor.getCargaReactor()-(guantes.getConsumo()*3*tiempoDisparo));
     }
 }
