@@ -60,4 +60,19 @@ public class Armadura {
         System.out.println("Corriendo por "+tiempoCorriendo+" segundo/s.");
         reactor.setCargaReactor(reactor.getCargaReactor()-(botas.getConsumo()*2*tiempoCorriendo));
     }
+    public void propulsarse(){
+        Random random = new Random();
+        int tiempoPropulsando = random.nextInt(10)+1;
+        System.out.println("Propulsando por "+tiempoPropulsando+" segundo/s.");
+        reactor.setCargaReactor(reactor.getCargaReactor()-(botas.getConsumo()*3*tiempoPropulsando));
+    }
+    public void volar(){
+        //Al volar la armadura hará un uso intensivo de las botas y de los guantes un uso normal
+        //consumiendo el triple de la energía establecida para las botas y el doble para los guantes.
+        Random random = new Random();
+        int tiempoVuelo = random.nextInt(10)+1;
+        System.out.println("Volando por "+tiempoVuelo+" segundo/s.");
+        reactor.setCargaReactor(reactor.getCargaReactor()-((botas.getConsumo()*3*tiempoVuelo)+guantes.getConsumo()*2*tiempoVuelo));
+
+    }
 }
