@@ -35,7 +35,7 @@ public class Radar {
         for (int i = 0; i < enemigos.length; i++) {
             if (enemigos[i] != null && enemigos[i].isEnemigo()){
 
-                System.out.println("Distancia al enemigo "+(i+1)+enemigos[i].getDinstancia()+" metros");
+                System.out.println("Distancia al enemigo "+(i+1)+" "+enemigos[i].getDinstancia()+" metros");
             }
         }
     }
