@@ -31,11 +31,12 @@ public class Radar {
         return enemigos;
     }
     public void mostrarObjetos(Objeto[] enemigos){
+        int num = 0;
         System.out.println("Enemigos Detectados: ");
         for (int i = 0; i < enemigos.length; i++) {
             if (enemigos[i] != null && enemigos[i].isEnemigo()){
-
-                System.out.println("Distancia al enemigo "+(i+1)+" "+enemigos[i].getDinstancia()+" metros");
+                num++;
+                System.out.println("Distancia al enemigo "+(num)+" "+enemigos[i].getDinstancia()+" metros");
             }
         }
     }
