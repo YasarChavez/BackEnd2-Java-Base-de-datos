@@ -1,7 +1,5 @@
 package Entidad;
 
-import java.util.Random;
-
 public class Bota {
     private float consumo = 1;
     private boolean sano = true;

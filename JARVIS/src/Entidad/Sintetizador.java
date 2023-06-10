@@ -1,7 +1,7 @@
 package Entidad;
 
 public class Sintetizador {
-    private  float consumo = 1;
+    private float consumo = 1;
 
     public Sintetizador() {
     }
