@@ -1,6 +1,6 @@
 package Entidad;
 
-public class Reactor {
+public class Reactor{
     private float cargaReactor = 10000f;
 
     public Reactor() {

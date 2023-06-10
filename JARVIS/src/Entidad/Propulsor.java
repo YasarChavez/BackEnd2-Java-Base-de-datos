@@ -1,16 +1,14 @@
 package Entidad;
 
-public class Guante {
-    private float consumo = 1;
+public class Propulsor {
+    private float consumo = 10;
     private boolean sano = true;
     private boolean destruido = false;
 
-    private Propulsor propulsorGuante = new Propulsor();
-
-    public Guante() {
+    public Propulsor() {
     }
 
-    public Guante(float consumo, boolean sano, boolean destruido) {
+    public Propulsor(float consumo, boolean sano, boolean destruido) {
         this.consumo = consumo;
         this.sano = sano;
         this.destruido = destruido;
@@ -40,21 +38,12 @@ public class Guante {
         this.destruido = destruido;
     }
 
-    public Propulsor getPropulsorGuante() {
-        return propulsorGuante;
-    }
-
-    public void setPropulsorGuante(Propulsor propulsorGuante) {
-        this.propulsorGuante = propulsorGuante;
-    }
-
     @Override
     public String toString() {
-        return "Guante{" +
+        return "Propulsor{" +
                 "consumo=" + consumo +
                 ", sano=" + sano +
                 ", destruido=" + destruido +
-                ", propulsorGuante=" + propulsorGuante +
                 '}';
     }
 }

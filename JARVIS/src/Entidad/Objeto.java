@@ -6,11 +6,11 @@ public class Objeto {
     Random random = new Random();
     private int resistencia = 100;
     private boolean enemigo = esEnemigo();
-    private int posX = random.nextInt(5000)+1;
-    private int posY = random.nextInt(5000)+1;
-    private int posZ = random.nextInt(5000)+1;
+    private int posX = random.nextInt(3000)+1;
+    private int posY = random.nextInt(3000)+1;
+    private int posZ = random.nextInt(3000)+1;
 
-    private int dinstancia = calcDistancia();
+    private int dinstancia = calcDistancia(posX,posY,posZ);
 
     public Objeto() {
     }
@@ -73,16 +73,12 @@ public class Objeto {
         this.dinstancia = dinstancia;
     }
 
-    public int calcDistancia(){
-        int dis = 0;
-        if (posX>posY && posX>posZ){
-            dis = posX;
-        }else if(posY>posX && posY>posZ){
-            dis= posY;
-        }else{
-            dis=posZ;
+    public int calcDistancia(int posX,int posY,int posZ){
+        double distancia = Math.sqrt(posX * posX + posY * posY + posZ * posZ);
+        if (distancia>5000){
+            distancia=5000;
         }
-        return dis;
+        return (int) distancia;
     }
     public boolean esEnemigo(){
         int ene = random.nextInt(2)+1;
