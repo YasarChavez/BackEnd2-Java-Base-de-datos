@@ -10,6 +10,7 @@ public class Main {
         boolean valido = false;
 
         do {
+
             System.out.println("\n*Creacion de cuenta de usuario*");
             System.out.println("Ingrese un nombre de usuario:");
             String usuario = leer.next();
