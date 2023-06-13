@@ -9,8 +9,7 @@ public class Main {
         MiHelper helper = new MiHelper(); //Metodos y mensajes para validar password
         boolean valido = false;
 
-        do {
-
+        while (true){
             System.out.println("\n*Creacion de cuenta de usuario*");
             System.out.println("Ingrese un nombre de usuario:");
             String usuario = leer.next();
@@ -21,16 +20,16 @@ public class Main {
 
             try {
                 helper.validarUsuario(usuario); //validar usuario
-                helper.validarPassword( contrasena, contrasena2);//validar password
+                helper.validarPassword(contrasena, contrasena2);//validar password
                 valido = true;
-            }catch (CustomException e){
+                break;
+            } catch (CustomException e) {
                 System.out.println("\nHubo un problema con la creacion de la cuenta:\n" + e.getMessage());
             }
 
-            if (valido){
+            if (valido) {
                 System.out.println("\nUsuario creado correctamente!");
             }
-
-        }while (!valido);
+        }
     }
 }
